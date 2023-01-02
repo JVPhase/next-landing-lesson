@@ -51,6 +51,6 @@ Receiving objects: 100% (4/4), done.
 
 На этом вступление заканчивается, и чтобы перейти к нулевой части нужно перейти с ветки 'main' на ветку '0-install'. Для этого в github нажмите кнопку 'main' и выберите ветку '0-install'.
 
-![Уберите чекбокс со значения](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/checkout.png)
+![Смените ветку](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/checkout.png)
 
 Увидимся в следующей части =)
