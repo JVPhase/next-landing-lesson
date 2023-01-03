@@ -1,0 +1,12 @@
+.Root {
+  padding: 5px;
+  display: inline-block;
+}
+
+.Link {
+  margin-right: 24px;
+}
+
+.Link:last-child {
+  margin-right: 0;
+}

@@ -1,12 +1,36 @@
 import styles from '../styles/Home.module.css';
+import SocialLinks from '../components/SocialLinks';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className={styles.Root}>
       <div className={styles.Header}>
-        <div className={styles.Navigation}></div>
+        <div className={styles.Navigation}>
+          <a href="#" className={styles.HeaderLink}>
+            Home
+          </a>
+          <a href="#" className={styles.HeaderLink}>
+            Product
+          </a>
+          <a href="#" className={styles.HeaderLink}>
+            Pricing
+          </a>
+          <a href="#" className={styles.HeaderLink}>
+            About
+          </a>
+          <a href="#" className={styles.HeaderLink}>
+            Contact
+          </a>
+          <a href="#" className={styles.HeaderLogo}>
+            <Image src="/logo.png" width={186} height={58} alt="Logo" />
+          </a>
+          <div className={styles.HeaderSocialLinks}>
+            <SocialLinks />
+          </div>
+        </div>
         <h1 className={styles.HeaderTitle}>
           The best products <br />
           start with Figma
