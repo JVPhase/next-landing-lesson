@@ -1,102 +1,18 @@
 # next-landing-lesson
 
-## Компоненты
+## Страницы
 
-Основная задача компонента - отрисовать интерфейс. Компоненты могут использоваться в других компонентах и на страницах. Компоненты содержатся в директории `components`. Поэтому давайте создадим ее в корне проекта.
+Страницы это компоненты, которые отображаются в браузере. Страницы могут быть различными, но в основном они представляют собой страницы сайта, которые отображаются в браузере.
 
-### Создание компонента
+Страницы находятся в папке `pages` и имеют расширение такое же, как и компонентов `.tsx`.
 
-В текущем макете есть 2 элемента, которые могут стать компонентами, которые будут переиспользоваться в разных местах страницы. Это кнопка и поле ввода текста. Давайте сначала создадим компонент для кнопки.
+## Создание страницы
 
-Создайте файл `components/Button.tsx` и добавьте следующий код:
+Чтобы создать страницу, просто создайте файл в папке `pages` с расширением `.tsx`. Например, чтобы создать страницу `about`, создайте файл `about.tsx` в папке `pages`.
 
-```tsx
-interface ButtonProps {  // Определяем интерфейс для пропсов
-  children: React.ReactNode; // Добавляем свойство children, которое будет содержать в себе все дочерние элементы
-}
+В нашем примере страница всего лишь одна (index.tsx), но в реальном проекте их может быть много.
 
-export default function Button ({ children }: ButtonProps) {
-  return <button>{children}</button>; // Возвращаем кнопку, которая будет содержать в себе все дочерние элементы
-};
-```
-
-Компонент кнопки создан. А теперь стилизуем его. Для этого создайте файл `components/Button.module.css` и добавьте следующий код:
-
-```css
-.Root {
-  border: none;
-  background: #2091F9;
-  padding: 16px;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-}
-```
-
-Теперь добавим стили к компоненту. Для этого импортируем файл стилей в компоненте `components/Button.tsx`:
-
-```tsx
-import styles from './Button.module.css';
-
-interface ButtonProps {
-  children: React.ReactNode;
-}
-
-export default function Button({ children }: ButtonProps) {
-  return <button className={styles.Root}>{children}</button>;
-}
-```
-
-Теперь наша кнопка имеет стили. Давайте сделаем так, чтобы ее можно было кастомизировать с помощью других классов. Для этого добавим пропс `className`:
-
-```tsx
-import styles from './Button.module.css';
-
-interface ButtonProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export default function Button({ children, className }: ButtonProps) {
-  return <button className={`${styles.Root} ${className}`}>{children}</button>;
-}
-```
-
-Давайте теперь создадим компонент для поля ввода текста. Создайте файл `components/Input.tsx` и добавьте следующий код:
-
-```tsx
-import styles from './Input.module.css';
-
-interface InputProps { // компонент input не имеет дочерних элементов, поэтому мы не используем свойство children
-  className?: string;
-  placeholder?: string; // добавляем пропс placeholder отвечающий за текст подсказки внутри поля ввода
-}
-
-export default function Input({ className, placeholder }: InputProps) {
-  return (
-    <input
-      className={`${styles.Root} ${className}`}
-      placeholder={placeholder}
-    />
-  );
-}
-```
-
-Теперь создайте файл `components/Input.module.css` и добавьте следующий код:
-
-```css
-.Root {
-  background: #f4f4f4;
-  border: 1px solid #e8e8e8;
-  border-radius: 39px;
-  color: #18171d;
-  min-width: 100px;
-  padding: 19px 20px;
-  font-size: 14px;
-}
-```
-
-Теперь посмотрим как они выглядят вместе. Подготовьте файл `pages/index.tsx`, очистив его от дефолтной верстки и добавьте следующий код:
+Для начала уберем все, что есть в файле `index.tsx` и оставим только следующее:
 
 ```tsx
 import styles from '../styles/Home.module.css';
@@ -105,16 +21,115 @@ import Input from '../components/Input';
 
 export default function Home() {
   return (
-    <>
-      <Button>Button</Button>
-      <Input placeholder="Input" />
-    </>
+    <div className={styles.Root}>
+      
+    </div>
   );
 }
 ```
 
-Если ваше приложение не запущено, запустите его командой `yarn dev`. После этого откройте в браузере `http://localhost:3000/` и убедитесь, что у вас получилось следующее:
+За стили страницы отвечает файл `styles/Home.module.css`. Его мы тоже очистим и оставим только следующее:
 
-![jpg изображение](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/first-components.png)
+```css
+.Root {
+  background: #ffffff;
+}
+```
 
-Вы умопомрачительны! В следующей части 3-pages мы перейдем к созданию страницы лендинга. Увидимся там!
+Рядом с файлом `Home.module.css` есть файл `global.css`. Это глобальные стили, которые применяются ко всему проекту. В нем мы уберем все, что есть и оставим только следующее:
+
+```css
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+```
+
+Теперь приступим к верстке страницы. Для этого поделим макет на несколько блоков:
+
+  1. Header
+  2. Features
+  3. Advantage
+  4. Newsletter
+  5. Partners
+  6. Testimonials
+  7. Pricing
+  8. Contact
+  9. Footer
+
+Отобразим это на странице добавив в `div` с классом `Root` следующее:
+
+```tsx
+<div className={styles.Header}></div>
+<div className={styles.Features}></div>
+<div className={styles.Advantage}></div>
+<div className={styles.Newsletter}></div>
+<div className={styles.Partners}></div>
+<div className={styles.Testimonials}></div>
+<div className={styles.Pricing}></div>
+<div className={styles.Contact}></div>
+<div className={styles.Footer}></div>
+```
+
+Теперь `index.tsx` должен выглядеть следующим образом:
+
+```tsx
+import styles from '../styles/Home.module.css';
+import Button from '../components/Button';
+import Input from '../components/Input';
+
+export default function Home() {
+  return (
+    <div className={styles.Root}>
+      <div className={styles.Header}></div>
+      <div className={styles.Features}></div>
+      <div className={styles.Advantage}></div>
+      <div className={styles.Newsletter}></div>
+      <div className={styles.Partners}></div>
+      <div className={styles.Testimonials}></div>
+      <div className={styles.Pricing}></div>
+      <div className={styles.Contact}></div>
+      <div className={styles.Footer}></div>
+    </div>
+  );
+}
+```
+
+### Header
+
+Приступим к верстке блока `Header`. В нем есть несколько элементов:
+
+  1. Навигация (здесь мы используем тег `div` с классом `Navigation`, так как внутри него будут дочерние элементы)
+  2. Заголовок (здесь тег `h1` с классом `HeaderTitle`)
+  3. Подзаголовок (здесь тег `h4` c классом `HeaderSubtitle`)
+  4. Кнопка (здесь мы используем компонент `Button` с классом `HeaderButton`)
+
+отобразим это на странице добавив в `div` с классом `Header` следующее:
+
+```tsx
+<div className={styles.Navigation}></div>
+<h1 className={styles.HeaderTitle}>
+  The best products <br /> {/*тег br используется для переноса текста на новую строку*/}
+  start with Figma
+</h1>
+<h4 className={styles.HeaderSubtitle}>
+  Most calendars are designed for teams. Slate is designed
+  <br />
+  for freelancers
+</h4>
+<Button className={styles.HeaderButton}>Try for free</Button>
+```
+
+В блоке `Header` один из элементов остался в виде черного ящика. Это блок навигации. В нем есть несколько элементов:
+
+  1. Ссылки (здесь мы используем тег `a` с классом `HeaderLink`)
+  2. Логотип (здесь мы используем тег `img` с классом `HeaderLogo`)
+  3. социальные сети (здесь мы используем тег `div` с классом `HeaderSocial`)
+  
