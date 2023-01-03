@@ -1,0 +1,9 @@
+.Root {
+  background: #f4f4f4;
+  border: 1px solid #e8e8e8;
+  border-radius: 39px;
+  color: #18171d;
+  min-width: 100px;
+  padding: 19px 20px;
+  font-size: 15px;
+}

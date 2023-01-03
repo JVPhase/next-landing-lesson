@@ -1,87 +1,120 @@
 # next-landing-lesson
 
-## Экспортирование асетов
+## Компоненты
 
-Макет ([ссылка](https://www.figma.com/file/EbgRFInBDdBBmabiJm8YVd/Figmaland--Business-Landing-page-(Community)?node-id=65%3A0&t=4F9havPGUoUTWnGF-1)) в Figma содержит много асетов, которые нужно экспортировать в проект. Все асеты находятся в папке `public` в корневой директории (в корне) проекта.
+Основная задача компонента - отрисовать интерфейс. Компоненты могут использоваться в других компонентах и на страницах. Компоненты содержатся в директории `components`. Поэтому давайте создадим ее в корне проекта.
 
-### Экспорт SVG
+### Создание компонента
 
-![векторное изображение](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/vector.png)
+В текущем макете есть 2 элемента, которые могут стать компонентами, которые будут переиспользоваться в разных местах страницы. Это кнопка и поле ввода текста. Давайте сначала создадим компонент для кнопки.
 
-Если изображение векторное, то вам нужно экспортировать SVG, для этого сделайте следующее:
-
-  1. Выберите SVG в Figma
-  2. Нажмите на кнопку `Export` в правом нижнем углу
-  3. Выберите `SVG` в списке форматов
-  4. Нажмите на кнопку `Export [название изображения]`
-  5. Сохраните файл в папку `public` в корневой директории проекта
-  6. Переименуйте файл в название изображения, которое вы хотите использовать в проекте
-
-### Экспорт PNG
-
-![png изображение](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/png.png)
-
-Если изображение растровое с прозрачным слоем, то вам нужно экспортировать PNG, для этого сделайте следующее:
-
-  1. Выберите PNG в Figma
-  2. Нажмите на кнопку `Export` в правом нижнем углу
-  3. Выберите `PNG` в списке форматов
-  4. Нажмите на кнопку `Export [название изображения]`
-  5. Сохраните файл в папку `public` в корневой директории проекта
-  6. Переименуйте файл в название изображения, которое вы хотите использовать в проекте
-
-### Экспорт JPG
-
-![jpg изображение](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/jpg.png)
-
-Если изображение растровое без прозрачного слоя, то вам нужно экспортировать JPG, для этого сделайте следующее:
-
-  1. Выберите JPG в Figma
-  2. Нажмите на кнопку `Export` в правом нижнем углу
-  3. Выберите `JPG` в списке форматов
-  4. Нажмите на кнопку `Export [название изображения]`
-  5. Сохраните файл в папку `public` в корневой директории проекта
-  6. Переименуйте файл в название изображения, которое вы хотите использовать в проекте
-
-### Экспорт шрифтов
-
-В хорошем макете есть [страница с компонентами](https://www.figma.com/file/EbgRFInBDdBBmabiJm8YVd/Figmaland--Business-Landing-page-(Community)?node-id=0%3A1&t=4F9havPGUoUTWnGF-0)
-
-![библиотека стилей](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/text-styles.png)
-
-Здесь вы можете найти названия используемых шрифтов, размер текста и так далее.
-
-В данном макете используется гугловский шрифт [Poppins](https://fonts.google.com/specimen/Poppins?query=poppins) и он уже есть в NextJS, поэтому вам осталось только подключить его.
-Для этого нужно сделать следующее:
-
-  1. откройте файл `pages/_app.tsx`
-  2. импортируйте шрифт в файл `import { Poppins } from '@next/font/google';`
-  3. укажите нужное начертание и вес шрифта `const poppins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });` (в данном случае это 400 - regular и 700 - bold)
-  4. добавьте тег style в разметку `<style jsx global>styles</style>`
-
-Вот так должно выглядеть:
+Создайте файл `components/Button.tsx` и добавьте следующий код:
 
 ```tsx
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
-import { Poppins } from '@next/font/google';
+interface ButtonProps {  // Определяем интерфейс для пропсов
+  children: React.ReactNode; // Добавляем свойство children, которое будет содержать в себе все дочерние элементы
+}
 
-const poppins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });
+export default function Button ({ children }: ButtonProps) {
+  return <button>{children}</button>; // Возвращаем кнопку, которая будет содержать в себе все дочерние элементы
+};
+```
 
-export default function App({ Component, pageProps }: AppProps) {
+Компонент кнопки создан. А теперь стилизуем его. Для этого создайте файл `components/Button.module.css` и добавьте следующий код:
+
+```css
+.Root {
+  border: none;
+  background: #2091F9;
+  padding: 16px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+```
+
+Теперь добавим стили к компоненту. Для этого импортируем файл стилей в компоненте `components/Button.tsx`:
+
+```tsx
+import styles from './Button.module.css';
+
+interface ButtonProps {
+  children: React.ReactNode;
+}
+
+export default function Button({ children }: ButtonProps) {
+  return <button className={styles.Root}>{children}</button>;
+}
+```
+
+Теперь наша кнопка имеет стили. Давайте сделаем так, чтобы ее можно было кастомизировать с помощью других классов. Для этого добавим пропс `className`:
+
+```tsx
+import styles from './Button.module.css';
+
+interface ButtonProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function Button({ children, className }: ButtonProps) {
+  return <button className={`${styles.Root} ${className}`}>{children}</button>;
+}
+```
+
+Давайте теперь создадим компонент для поля ввода текста. Создайте файл `components/Input.tsx` и добавьте следующий код:
+
+```tsx
+import styles from './Input.module.css';
+
+interface InputProps { // компонент input не имеет дочерних элементов, поэтому мы не используем свойство children
+  className?: string;
+  placeholder?: string; // добавляем пропс placeholder отвечающий за текст подсказки внутри поля ввода
+}
+
+export default function Input({ className, placeholder }: InputProps) {
+  return (
+    <input
+      className={`${styles.Root} ${className}`}
+      placeholder={placeholder}
+    />
+  );
+}
+```
+
+Теперь создайте файл `components/Input.module.css` и добавьте следующий код:
+
+```css
+.Root {
+  background: #f4f4f4;
+  border: 1px solid #e8e8e8;
+  border-radius: 39px;
+  color: #18171d;
+  min-width: 100px;
+  padding: 19px 20px;
+  font-size: 14px;
+}
+```
+
+Теперь посмотрим как они выглядят вместе. Подготовьте файл `pages/index.tsx`, очистив его от дефолтной верстки и добавьте следующий код:
+
+```tsx
+import styles from '../styles/Home.module.css';
+import Button from '../components/Button';
+import Input from '../components/Input';
+
+export default function Home() {
   return (
     <>
-      <style jsx global>{`
-        html {
-          font-family: ${poppins.style.fontFamily};
-        }
-      `}</style>
-      <Component {...pageProps} />
+      <Button>Button</Button>
+      <Input placeholder="Input" />
     </>
   );
 }
 ```
 
-Вы изумительны! Теперь вы можете использовать изображения и шрифт в своем проекте.
+Если ваше приложение не запущено, запустите его командой `yarn dev`. После этого откройте в браузере `http://localhost:3000/` и убедитесь, что у вас получилось следующее:
 
-О том как их использовать, вы узнаете в следующих частях урока. А пока переходите к части 2-components. Встретимся там!
+![jpg изображение](https://github.com/JVPhase/next-landing-lesson/raw/main/readme-images/first-components.png)
+
+Вы умопомрачительны! В следующей части 3-pages мы перейдем к созданию страницы лендинга. Увидимся там!
