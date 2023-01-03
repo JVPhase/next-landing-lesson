@@ -6,7 +6,7 @@
 
 ### Создание компонента
 
-В текущем макете есть 2 элемента, которые могут стать компонентами, которые будут переиспользоваться в разных местах страницы. Это кнопка и поле ввода текста. Давайте сначала создадим компонент для кнопки.
+В текущем макете есть 3 элемента, которые могут стать компонентами, которые будут переиспользоваться в разных местах страницы. Это кнопка, поле ввода текста и ссылки на социальные сети. Давайте сначала создадим компонент для кнопки.
 
 Создайте файл `components/Button.tsx` и добавьте следующий код:
 
@@ -96,6 +96,65 @@ export default function Input({ className, placeholder }: InputProps) {
 }
 ```
 
+Теперь создадим компонент для отображения ссылок на социальные сети. Создайте файл `components/SocialLinks.tsx` и добавьте следующий код:
+
+```tsx
+import styles from './SocialLinks.module.css';
+import Image from 'next/image';
+
+interface SocialLinksProps {
+  isBlue?: boolean; // добавляем пропс isBlue, который будет отвечать за то, какие иконки будут отображаться
+}
+
+export default function SocialLinks({ isBlue }: SocialLinksProps) {
+  return (
+    <div className={styles.Root}>
+      <a href="#" className={styles.Link}>
+        <Image
+          src={isBlue ? '/twitter-blue.svg' : '/twitter.svg'}
+          width={34}
+          height={34}
+          alt="Twitter"
+        />
+      </a>
+      <a href="#" className={styles.Link}>
+        <Image
+          src={isBlue ? '/facebook-blue.svg' : '/facebook.svg'}
+          width={34}
+          height={34}
+          alt="Facebook"
+        />
+      </a>
+      <a href="#" className={styles.Link}>
+        <Image
+          src={isBlue ? '/linkedin-blue.svg' : '/linkedin.svg'}
+          width={34}
+          height={34}
+          alt="LinkedIn"
+        />
+      </a>
+    </div>
+  );
+}
+```
+
+Теперь создайте файл `components/SocialLinks.module.css` и добавьте следующий код:
+
+```css
+.Root {
+  padding: 5px;
+  display: inline-block;
+}
+
+.Link {
+  margin-right: 24px;
+}
+
+.Link:last-child {
+  margin-right: 0;
+}
+```
+
 Теперь посмотрим как они выглядят вместе. Подготовьте файл `pages/index.tsx`, очистив его от дефолтной верстки и добавьте следующий код:
 
 ```tsx
@@ -108,6 +167,8 @@ export default function Home() {
     <>
       <Button>Button</Button>
       <Input placeholder="Input" />
+      <SocialLinks isBlue />
+      <SocialLinks />
     </>
   );
 }
