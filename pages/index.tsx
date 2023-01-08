@@ -40,7 +40,9 @@ export default function Home() {
           <br />
           for freelancers
         </h4>
-        <Button className={styles.HeaderButton}>Try For Free</Button>
+        <Button className={styles.HeaderButton}>
+          <h3>Try For Free</h3>
+        </Button>
       </div>
       <div className={styles.Features}>
         <h2>Features</h2>
@@ -122,7 +124,9 @@ export default function Home() {
             Most calendars are designed for teams. <br />
             Slate is designed for freelancers
           </h4>
-          <Button className={styles.AdvantageButton}>Try For Free</Button>
+          <Button className={styles.AdvantageButton}>
+            <h3>Try For Free</h3>
+          </Button>
         </div>
         <div>
           <Image src="/macbook.png" alt="macbook" width={624} height={349} />
@@ -154,7 +158,71 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div className={styles.Partners}></div>
+      <div className={styles.Partners}>
+        <h2>Partners</h2>
+        <h4>
+          Most calendars are designed for teams. <br />
+          Slate is designed for freelancers
+        </h4>
+        <div className={styles.PartnersList}>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image src="/google.svg" alt="google" width={194} height={64} />
+            </div>
+          </div>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image src="/amazon.png" alt="amazon" width={193} height={58} />
+            </div>
+          </div>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image
+                src="/microsoft.png"
+                alt="microsoft"
+                width={221}
+                height={77}
+              />
+            </div>
+          </div>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image src="/uber.png" alt="uber" width={140} height={77} />
+            </div>
+          </div>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image src="/dropbox.png" alt="dropbox" width={229} height={46} />
+            </div>
+          </div>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image src="/google.svg" alt="google" width={194} height={64} />
+            </div>
+          </div>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image src="/uber.png" alt="uber" width={140} height={77} />
+            </div>
+          </div>
+          <div className={styles.PartnersItem}>
+            <h5>Client Name</h5>
+            <div className={styles.PartnersItemImage}>
+              <Image src="/amazon.png" alt="amazon" width={193} height={58} />
+            </div>
+          </div>
+        </div>
+        <Button className={styles.PartnersButton}>
+          <h3>Try For Free</h3>
+        </Button>
+      </div>
       <div className={styles.Testimonials}></div>
       <div className={styles.Pricing}></div>
       <div className={styles.Contact}></div>

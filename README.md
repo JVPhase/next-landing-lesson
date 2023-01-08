@@ -170,7 +170,9 @@ export default function Home() {
   <br />
   for freelancers
 </h4>
-<Button className={styles.HeaderButton}>Try for free</Button>
+<Button className={styles.HeaderButton}>
+  <h3>Try For Free</h3>
+</Button>
 ```
 
 В блоке `Header` один из элементов остался в виде черного ящика. Это блок навигации. В нем есть несколько элементов:
@@ -240,7 +242,9 @@ export default function Home() {
           <br />
           for freelancers
         </h4>
-        <Button className={styles.HeaderButton}>Try For Free</Button>
+        <Button className={styles.HeaderButton}>
+          <h3>Try For Free</h3>
+        </Button>
       </div>
       <div className={styles.Features}></div>
       <div className={styles.Advantage}></div>
@@ -427,7 +431,9 @@ Slate is designed for freelancers</h4>
     Most calendars are designed for teams. <br />
     Slate is designed for freelancers
   </h4>
-  <Button className={styles.AdvantageButton}>Try For Free</Button>
+  <Button className={styles.AdvantageButton}>
+    <h3>Try For Free</h3>
+  </Button>
 </div>
 <div>
   <Image src="/macbook.png" alt="macbook" width={624} height={349} />
@@ -516,5 +522,120 @@ Slate is designed for freelancers</h4>
 .NewsletterButton {
   width: 177px; /* ширина элемента блока NewsletterButton 177 пикселей */
   margin-left: 12px; /* левый внешний отступ элемента блока NewsletterButton 12 пикселей */
+}
+```
+
+### Partners
+
+Теперь давайте создадим блок Partners. Этот блок будет состоять из нескольких элементов:
+
+  1. Заголовок (`h2`)
+  2. Подзаголовок (`h4`)
+  3. Список партнеров (`div` с классом `PartnersList`)
+  4. Кнопка (`Button` с классом `PartnersButton`)
+
+Отобразим это в шаблоне добавив в `div` с классом `Partners` элементы `h2`, `h4`, `div` и `Button`.
+
+```tsx
+<h2>Partners</h2>
+<h4>
+  Most calendars are designed for teams. <br />
+  Slate is designed for freelancers
+</h4>
+<div className={styles.PartnersList}></div>
+<Button className={styles.PartnersButton}>
+  <h3>Try For Free</h3>
+</Button>
+```
+
+Внутри `div` с классом `PartnersList` добавим элементы `div` с классом `PartnersItem` и внутри каждого элемента `div` с классом `PartnersItem` добавим элемент `h5` и `div` с классом `PartnersItemImage` (для центрирования изображения внутри элемента), внутри которого будет находится `Image` с атрибутами `src`, `alt`, `width` и `height`.
+
+```tsx
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image src="/google.svg" alt="google" width={194} height={64} />
+  </div>
+</div>
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image src="/amazon.png" alt="amazon" width={193} height={58} />
+  </div>
+</div>
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image
+      src="/microsoft.png"
+      alt="microsoft"
+      width={221}
+      height={77}
+    />
+  </div>
+</div>
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image src="/uber.png" alt="uber" width={140} height={77} />
+  </div>
+</div>
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image src="/dropbox.png" alt="dropbox" width={229} height={46} />
+  </div>
+</div>
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image src="/google.svg" alt="google" width={194} height={64} />
+  </div>
+</div>
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image src="/uber.png" alt="uber" width={140} height={77} />
+  </div>
+</div>
+<div className={styles.PartnersItem}>
+  <h5>Client Name</h5>
+  <div className={styles.PartnersItemImage}>
+    <Image src="/amazon.png" alt="amazon" width={193} height={58} />
+  </div>
+</div>
+```
+
+Теперь давайте добавим стили для блока Partners.
+
+```css
+.Partners {
+  margin: 130px auto 80px; /* верхний внешний отступ блока Partners 130 пикселей, отступы по бокам автоматические, нижний внешний отступ блока Partners 80 пикселей */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.PartnersList {
+  max-width: 1075px; /* максимальная ширина блока PartnersList 1075 пикселей */
+  margin: 80px auto; /* верхний внешний отступ блока PartnersList 80 пикселей, отступы по бокам автоматические */
+  display: flex; /* элементы блока PartnersList выстраиваются в ряд */
+  flex-wrap: wrap; /* элементы блока PartnersList переносятся на новую строку, если не помещаются в ряд */
+  border: 0.5px solid #D8D8D8; /* рамка блока PartnersList 0.5 пикселя, цвет #D8D8D8 */
+}
+
+.PartnersItem {
+  border: 0.5px solid #D8D8D8; /* рамка элемента блока PartnersItem 0.5 пикселя, цвет #D8D8D8 */
+  padding: 25px 38px; /* верхний и нижний внутренние отступы элемента блока PartnersItem 0 пикселей, отступы по бокам 38 пикселей */
+  flex: 1; /* элемент блока PartnersItem занимает все доступное пространство */
+}
+
+.PartnersItemImage {
+  display: flex; /* для позиционирования содержимого элемента блока PartnersItemImage используется flexbox */
+  justify-content: center; /* выравнивание содержимого по центру */
+  align-items: center; /* выравнивание содержимого по центру */
+  min-height: 77px; /* минимальная высота элемента блока PartnersItemImage 77 пикселей */
+}
+
+.PartnersButton {
+  width: 236px; /* ширина элемента блока PartnersButton 236 пикселей */
 }
 ```

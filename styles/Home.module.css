@@ -138,3 +138,33 @@
   width: 177px; /* ширина элемента блока NewsletterButton 177 пикселей */
   margin-left: 12px; /* левый внешний отступ элемента блока NewsletterButton 12 пикселей */
 }
+
+.Partners {
+  margin: 130px auto 80px; /* верхний внешний отступ блока Partners 130 пикселей, отступы по бокам автоматические, нижний внешний отступ блока Partners 80 пикселей */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.PartnersList {
+  max-width: 1075px; /* максимальная ширина блока PartnersList 1075 пикселей */
+  margin: 80px auto; /* верхний внешний отступ блока PartnersList 80 пикселей, отступы по бокам автоматические */
+  display: flex; /* элементы блока PartnersList выстраиваются в ряд */
+  flex-wrap: wrap; /* элементы блока PartnersList переносятся на новую строку, если не помещаются в ряд */
+  border: 0.5px solid #D8D8D8; /* рамка блока PartnersList 0.5 пикселя, цвет #D8D8D8 */
+}
+
+.PartnersItem {
+  border: 0.5px solid #D8D8D8; /* рамка элемента блока PartnersItem 0.5 пикселя, цвет #D8D8D8 */
+  padding: 25px 38px; /* верхний и нижний внутренние отступы элемента блока PartnersItem 0 пикселей, отступы по бокам 38 пикселей */
+  flex: 1; /* элемент блока PartnersItem занимает все доступное пространство */
+}
+
+.PartnersItemImage {
+  display: flex; /* для позиционирования содержимого элемента блока PartnersItemImage используется flexbox */
+  justify-content: center; /* выравнивание содержимого по центру */
+  align-items: center; /* выравнивание содержимого по центру */
+  min-height: 77px; /* минимальная высота элемента блока PartnersItemImage 77 пикселей */
+}
+
+.PartnersButton {
+  width: 236px; /* ширина элемента блока PartnersButton 236 пикселей */
+}
