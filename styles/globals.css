@@ -9,3 +9,45 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+h1 {
+  font-size: 74px;
+  line-height: 84px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 28px;
+}

@@ -1,9 +1,10 @@
 .Root {
   border: none;
   border-radius: 35px;
-  background: #2091F9;
+  background: #2091f9;
   padding: 16px;
   text-align: center;
   color: white;
   font-size: 20px;
+  cursor: pointer;
 }

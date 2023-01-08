@@ -40,11 +40,120 @@ export default function Home() {
           <br />
           for freelancers
         </h4>
-        <Button className={styles.HeaderButton}>Try for free</Button>
+        <Button className={styles.HeaderButton}>Try For Free</Button>
       </div>
-      <div className={styles.Features}></div>
-      <div className={styles.Advantage}></div>
-      <div className={styles.Newsletter}></div>
+      <div className={styles.Features}>
+        <h2>Features</h2>
+        <h4>
+          Most calendars are designed for teams. <br />
+          Slate is designed for freelancers
+        </h4>
+        <div className={styles.FeaturesList}>
+          <div>
+            <Image
+              src="/shapes.svg"
+              alt="shapes"
+              className={styles.FeaturesListItemIcon}
+              width={47}
+              height={47}
+            />
+            <h3>
+              OpenType features
+              <br />
+              Variable fonts
+            </h3>
+            <p className={styles.FeaturesListItemText}>
+              Slate helps you see how many more days you need to work to reach
+              your financial goal.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/drawning.svg"
+              alt="dravning"
+              className={styles.FeaturesListItemIcon}
+              width={45}
+              height={42}
+            />
+            <h3>Design with real data</h3>
+            <p className={styles.FeaturesListItemText}>
+              Slate helps you see how many more days you need to work to reach
+              your financial goal.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/brush.svg"
+              alt="brush"
+              className={styles.FeaturesListItemIcon}
+              width={49}
+              height={47}
+            />
+            <h3>
+              Fastest way to
+              <br />
+              take action
+            </h3>
+            <p className={styles.FeaturesListItemText}>
+              Slate helps you see how many more days you need to work to reach
+              your financial goal.
+            </p>
+          </div>
+        </div>
+        <div className={styles.FeaturesVideo}>
+          <Button className={styles.FeaturesVideoButton}>
+            <Image
+              src="/play.svg"
+              alt="play"
+              className={styles.FeaturesVideoButtonIcon}
+              width={40}
+              height={48}
+            />
+          </Button>
+        </div>
+      </div>
+      <div className={styles.Advantage}>
+        <div>
+          <h2>
+            Fastest way to <br />
+            organize
+          </h2>
+          <h4>
+            Most calendars are designed for teams. <br />
+            Slate is designed for freelancers
+          </h4>
+          <Button className={styles.AdvantageButton}>Try For Free</Button>
+        </div>
+        <div>
+          <Image src="/macbook.png" alt="macbook" width={624} height={349} />
+        </div>
+      </div>
+      <div className={styles.Newsletter}>
+        <div>
+          <Image
+            src="/newsletter.svg"
+            alt="newsletter"
+            width={678}
+            height={515}
+          />
+        </div>
+        <div>
+          <h3>At your fingertips</h3>
+          <h2>
+            Lightning fast <br />
+            prototyping
+          </h2>
+          <form className={styles.NewsletterForm}>
+            <h3>Subscribe to our Newsletter</h3>
+            <p>Available exclusivery on Figmaland</p>
+            <Input
+              placeholder="Your email"
+              className={styles.NewsletterInput}
+            />
+            <Button className={styles.NewsletterButton}>Subscribe</Button>
+          </form>
+        </div>
+      </div>
       <div className={styles.Partners}></div>
       <div className={styles.Testimonials}></div>
       <div className={styles.Pricing}></div>

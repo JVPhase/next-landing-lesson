@@ -51,6 +51,50 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+/* следующие стили элементов взяты из компонентов фигмы  */
+
+h1 {
+  font-size: 74px;
+  line-height: 84px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 28px;
+}
 ```
 
 Теперь приступим к верстке страницы. Для этого поделим макет на несколько блоков:
@@ -196,7 +240,7 @@ export default function Home() {
           <br />
           for freelancers
         </h4>
-        <Button className={styles.HeaderButton}>Try for free</Button>
+        <Button className={styles.HeaderButton}>Try For Free</Button>
       </div>
       <div className={styles.Features}></div>
       <div className={styles.Advantage}></div>
@@ -214,5 +258,263 @@ export default function Home() {
 Теперь файл стал еще больше, но это не страшно. Все элементы блока `Header` мы разместили на странице. Теперь добавим стили для них. Для этого в файле `Home.module.css` добавим следующее:
 
 ```css
-// TODO: Header styles
+.Root {
+  background: #ffffff; /* цвет фона белый */
+}
+
+.Header {
+  width: 100%; /* блок Header занимает 100 процентов ширины страницы */
+  height: 864px; /* высота блока Header 864 пикселя */
+  background-image: url(/header.jpeg); /* фоновое изображение блока Header */
+  background-repeat: no-repeat; /* фоновое изображение не повторяется */
+  background-size: cover; /* фоновое изображение растягивается на всю ширину блока */
+  background-position: center; /* фоновое изображение выравнивается по центру */
+  text-align: center; /* текст выравнивается по центру */
+  color: #ffffff; /* цвет текста белый */
+}
+
+.Navigation {
+  display: flex; /* элементы блока Navigation выстраиваются в ряд */
+  max-width: 1210px; /* максимальная ширина блока Navigation 1210 пикселей */
+  margin: 0 auto; /* блок Navigation выравнивается по центру */
+  padding: 54px 40px; /* внутренние отступы блока Navigation 54 пикселя сверху и снизу, 40 пикселей слева и справа */
+}
+
+.HeaderLink {
+  display: inline-block; /* элементы блока HeaderLink выстраиваются в ряд */
+  padding: 10px; /* внутренние отступы элементов блока HeaderLink 10 пикселей */
+  margin-top: 10px; /* верхний внешний отступ элементов блока HeaderLink 10 пикселей */
+  margin-right: 21px; /* правый внешний отступ элементов блока HeaderLink 21 пиксель */
+  font-size: 15px; /* размер шрифта 15 пикселей */
+  line-height: 28px; /* межстрочный интервал 28 пикселей */
+  color: #ffffff; /* цвет текста белый */
+  text-decoration: none; /* убираем подчеркивание у ссылок */
+}
+
+.HeaderLogo {
+  height: 58px; /* высота элемента блока HeaderLogo 58 пикселей */
+}
+
+.HeaderSocialLinks {
+  flex: 1; /* элементы блока HeaderSocialLinks занимают всю доступную ширину */
+  text-align: right; /* текст выравнивается по правому краю */
+  padding: 10px; /* внутренние отступы элементов блока HeaderSocialLinks 10 пикселей */
+}
+
+.HeaderTitle {
+  margin-top: 100px; /* верхний внешний отступ элемента блока HeaderTitle 100 пикселей */
+}
+
+.HeaderSubtitle {
+  margin-top: 30px; /* верхний внешний отступ элемента блока HeaderSubtitle 30 пикселей */
+  margin-bottom: 100px; /* нижний внешний отступ элемента блока HeaderSubtitle 100 пикселей */
+}
+
+.HeaderButton {
+  width: 236px; /* ширина элемента блока HeaderButton 236 пикселей */
+}
+```
+
+### Features
+
+Приступим к созданию блока Features. Этот блок состоит из следующих элементов:
+
+  1. Заголовок блока (тег `h2`)
+  2. Подзаголовок блока (тег `h4`)
+  3. Список элементов Features (тег `div` с классом `FeaturesList`)
+  4. Блок с превью видео (тег `div` с классом `FeaturesVideo`)
+
+Отобразим это в html коде добавив в `div` с классом `Features` следующие элементы:
+
+```tsx
+<h2>Features</h2>
+<h4>Most calendars are designed for teams. <br/>
+Slate is designed for freelancers</h4>
+<div className={styles.FeaturesList}></div>
+<div className={styles.FeaturesVideo}></div>
+```
+
+Внутри блока `FeaturesList` добавим три элемента списка (тег `div`) в котором будут находиться иконка (компонент Image, ранее мы его использовали, чтобы добавить лого, он уже должен быть импортирован `import Image from 'next/image';`), заголовок (тег `h3`) и текст (тег `p`):
+
+```tsx
+<div>
+  <Image src="/shapes.svg" alt="shapes" className={styles.FeaturesListItemIcon} width={47} height={47} />
+  <h3>OpenType features<br/>
+  Variable fonts</h3>
+  <p className={styles.FeaturesListItemText}>Slate helps you see how many more days you need to work to reach your financial goal.</p>
+</div>
+<div>
+  <Image src="/drawning.svg" alt="dravning" className={styles.FeaturesListItemIcon} width={45} height={42} />
+  <h3>Design with real data</h3>
+  <p className={styles.FeaturesListItemText}>Slate helps you see how many more days you need to work to reach your financial goal.</p>
+</div>
+<div>
+  <Image src="/brush.svg" alt="brush" className={styles.FeaturesListItemIcon} width={49} height={47} />
+  <h3>Fastest way to<br />
+  take action</h3>
+  <p className={styles.FeaturesListItemText}>Slate helps you see how many more days you need to work to reach your financial goal.</p>
+</div>
+```
+
+Внутри блока `FeaturesVideo` добавим компонент кнопки Button c классом `FeaturesVideoButton` (внутри него будет находиться иконка компонента Image с классом `FeaturesVideoButtonIcon`):
+
+```tsx
+<Button className={styles.FeaturesVideoButton}>
+  <Image src="/play.svg" alt="play" className={styles.FeaturesVideoButtonIcon} width={40} height={48} />
+</Button>
+```
+
+Теперь добавим стили для блока Features. Для этого в файле `Home.module.css` добавим следующее:
+
+```css
+.Features {
+  margin-top: 181px; /* верхний внешний отступ блока Features 181 пиксель */
+  width: 100%; /* ширина блока Features 100% */
+  text-align: center; /* контент выравнивается по центру */
+}
+
+.FeaturesList {
+  margin: 80px auto 0; /* верхний внешний отступ элемента блока FeaturesList 80 пикселей, отступы по бокам автоматические */
+  max-width: 869px; /* максимальная ширина блока FeaturesList 869 пикселей */
+  display: grid; /* элементы блока FeaturesList выстраиваются в сетку */
+  grid-template-columns: auto auto auto; /* ширина колонок 1, 2 и 3 равна ширине содержимого */
+  column-gap: 52px; /* расстояние между колонками 52 пикселей */
+}
+
+.FeaturesListItemIcon {
+  margin-bottom: 17px; /* нижний внешний отступ элемента блока FeaturesListItemIcon 17 пикселей */
+}
+
+.FeaturesListItemText {
+  margin-top: 17px; /* верхний внешний отступ элемента блока FeaturesListItemText 17 пикселей */
+}
+
+.FeaturesVideo {
+  margin: 132px auto 0; /* верхний внешний отступ блока FeaturesVideo 132 пикселей, отступы по бокам автоматические */
+  width: 1177px; /* ширина блока FeaturesVideo 1177 пикселей */
+  height: 658px; /* высота блока FeaturesVideo 658 пикселей */
+  background-image: url(/screen.jpg); /* задний фон блока FeaturesVideo */
+  background-size: cover; /* фоновое изображение растягивается на всю ширину блока */
+  background-position: center; /* фоновое изображение выравнивается по центру */
+  background-repeat: no-repeat; /* фоновое изображение не повторяется */
+  display: flex; /* для позиционирование дочернего элемента блока FeaturesVideo */
+  justify-content: center; /* дочерний элемент блока FeaturesVideo выравнивается по центру по горизонтали */
+  align-items: center; /* дочерний элемент блока FeaturesVideo выравнивается по центру по вертикали */
+}
+
+.FeaturesVideoButton {
+  width: 187px; /* ширина элемента блока FeaturesVideoButton 187 пикселей */
+  height: 187px; /* высота элемента блока FeaturesVideoButton 187 пикселей */
+  border-radius: 50%; /* радиус скругления углов элемента блока FeaturesVideoButton 50% */
+}
+```
+
+Вы всегда можете сравнить результат с кодом в репозитории.
+
+### Advantage
+
+А теперь давайте создадим блок Advantage. Этот блок будет состоять из двух колонок. В левой колонке будет заголовок, подзаголовок и кнопка, а в правой колонке будет изображение.
+
+Отобразим это в шаблоне добавив в блок Advantage два элемента `div` внутри которых будут находится дочерние компоненты, описанные выше.
+
+```tsx
+<div>
+  <h2>
+    Fastest way to <br />
+    organize
+  </h2>
+  <h4>
+    Most calendars are designed for teams. <br />
+    Slate is designed for freelancers
+  </h4>
+  <Button className={styles.AdvantageButton}>Try For Free</Button>
+</div>
+<div>
+  <Image src="/macbook.png" alt="macbook" width={624} height={349} />
+</div>
+```
+
+Теперь добавим стили для блока Advantage. Для этого в файле `Home.module.css` добавим следующее:
+
+```css
+.Advantage {
+  max-width: 1283px; /* максимальная ширина блока Advantage 1283 пикселей */
+  margin: 226px auto 0; /* верхний внешний отступ блока Advantage 226 пикселей, отступы по бокам автоматические */
+  padding: 43px 0; /* верхний и нижний внутренние отступы блока Advantage 43 пикселей, отступы по бокам 0 */
+  display: grid; /* элементы блока Advantage выстраиваются в сетку */
+  grid-template-columns: auto auto; /* ширина колонок 1 и 2 равна ширине содержимого */
+  column-gap: 50px; /* расстояние между колонками 50 пикселей */
+}
+
+.AdvantageButton {
+  margin-top: 60px; /* верхний внешний отступ элемента блока AdvantageButton 60 пикселей */
+  width: 236px; /* ширина элемента блока AdvantageButton 236 пикселей */ 
+}
+```
+
+### Newsletter
+
+Теперь давайте создадим блок Newsletter. Этот блок будет состоять так же из двух колонок (тег `div`). Только в левой колонке будет изображение, а в правой колонке будет заголовок (тег `h2`) с "надзаголовком" (тег `h3`) и простая форма с название, описанием, полем ввода текста и кнопкой.
+
+Отобразим это в шаблоне добавив в блок Newsletter два элемента `div` внутри которых будут находится дочерние компоненты, описанные выше.
+
+```tsx
+<div>
+  <Image
+    src="/newsletter.svg"
+    alt="newsletter"
+    width={678}
+    height={515}
+  />
+</div>
+<div>
+  <h3>At your fingertips</h3>
+  <h2>
+    Lightning fast <br />
+    prototyping
+  </h2>
+  <form className={styles.NewsletterForm}>
+    <h3>Subscribe to our Newsletter</h3>
+    <p>Available exclusivery on Figmaland</p>
+    <Input
+      placeholder="Your email"
+      className={styles.NewsletterInput}
+    />
+    <Button className={styles.NewsletterButton}>Subscribe</Button>
+  </form>
+</div>
+```
+
+Теперь добавим стили для блока Newsletter. Для этого в файле `Home.module.css` добавим следующее:
+
+```css
+.Newsletter {
+  max-width: 1440px; /* максимальная ширина блока Newsletter 1440 пикселей */
+  margin: 0 auto; /* отступы по бокам автоматические */
+  padding: 43px 0; /* верхний и нижний внутренние отступы блока Newsletter 43 пикселей, отступы по бокам 0 */
+  display: grid; /* элементы блока Newsletter выстраиваются в сетку */
+  grid-template-columns: auto auto; /* ширина колонок 1 и 2 равна ширине содержимого */
+  column-gap: 50px; /* расстояние между колонками 50 пикселей */
+}
+
+.Newsletter > div:last-child {
+  padding-top: 121px; /* верхний внутренний отступ второго дочернего элемента блока Newsletter 121 пикселей */
+}
+
+.NewsletterForm {
+  margin-top: 30px; /* верхний внешний отступ элемента блока NewsletterForm 30 пикселей */
+}
+
+.NewsletterInput, .NewsletterButton {
+  margin: 36px 0; /* верхний и нижний внешние отступы элементов блока NewsletterInput и NewsletterButton 36 пикселей, отступы по бокам 0 */
+}
+
+.NewsletterInput {
+  width: 273px; /* ширина элемента блока NewsletterInput 273 пикселей */
+}
+
+.NewsletterButton {
+  width: 177px; /* ширина элемента блока NewsletterButton 177 пикселей */
+  margin-left: 12px; /* левый внешний отступ элемента блока NewsletterButton 12 пикселей */
+}
 ```

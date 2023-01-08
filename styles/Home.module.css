@@ -1,3 +1,140 @@
 .Root {
-  background: #ffffff;
+  background: #ffffff; /* цвет фона белый */
+}
+
+.Header {
+  width: 100%; /* блок Header занимает 100 процентов ширины страницы */
+  height: 864px; /* высота блока Header 864 пикселя */
+  background-image: url(/header.jpeg); /* фоновое изображение блока Header */
+  background-repeat: no-repeat; /* фоновое изображение не повторяется */
+  background-size: cover; /* фоновое изображение растягивается на всю ширину блока */
+  background-position: center; /* фоновое изображение выравнивается по центру */
+  text-align: center; /* текст выравнивается по центру */
+  color: #ffffff; /* цвет текста белый */
+}
+
+.Navigation {
+  display: flex; /* элементы блока Navigation выстраиваются в ряд */
+  max-width: 1210px; /* максимальная ширина блока Navigation 1210 пикселей */
+  margin: 0 auto; /* блок Navigation выравнивается по центру */
+  padding: 54px 40px; /* внутренние отступы блока Navigation 54 пикселя сверху и снизу, 40 пикселей слева и справа */
+}
+
+.HeaderLink {
+  display: inline-block; /* элементы блока HeaderLink выстраиваются в ряд */
+  padding: 10px; /* внутренние отступы элементов блока HeaderLink 10 пикселей */
+  margin-top: 10px; /* верхний внешний отступ элементов блока HeaderLink 10 пикселей */
+  margin-right: 21px; /* правый внешний отступ элементов блока HeaderLink 21 пиксель */
+  font-size: 15px; /* размер шрифта 15 пикселей */
+  line-height: 28px; /* межстрочный интервал 28 пикселей */
+  color: #ffffff; /* цвет текста белый */
+  text-decoration: none; /* убираем подчеркивание у ссылок */
+}
+
+.HeaderLogo {
+  height: 58px; /* высота элемента блока HeaderLogo 58 пикселей */
+}
+
+.HeaderSocialLinks {
+  flex: 1; /* элементы блока HeaderSocialLinks занимают всю доступную ширину */
+  text-align: right; /* текст выравнивается по правому краю */
+  padding: 10px; /* внутренние отступы элементов блока HeaderSocialLinks 10 пикселей */
+}
+
+.HeaderTitle {
+  margin-top: 100px; /* верхний внешний отступ элемента блока HeaderTitle 100 пикселей */
+}
+
+.HeaderSubtitle {
+  margin-top: 30px; /* верхний внешний отступ элемента блока HeaderSubtitle 30 пикселей */
+  margin-bottom: 100px; /* нижний внешний отступ элемента блока HeaderSubtitle 100 пикселей */
+}
+
+.HeaderButton {
+  width: 236px; /* ширина элемента блока HeaderButton 236 пикселей */
+}
+
+.Features {
+  margin-top: 181px; /* верхний внешний отступ блока Features 181 пиксель */
+  width: 100%; /* ширина блока Features 100% */
+  text-align: center; /* контент выравнивается по центру */
+}
+
+.FeaturesList {
+  margin: 80px auto 0; /* верхний внешний отступ элемента блока FeaturesList 80 пикселей, отступы по бокам автоматические */
+  max-width: 869px; /* максимальная ширина блока FeaturesList 869 пикселей */
+  display: grid; /* элементы блока FeaturesList выстраиваются в сетку */
+  grid-template-columns: auto auto auto; /* ширина колонок 1, 2 и 3 равна ширине содержимого */
+  column-gap: 52px; /* расстояние между колонками 52 пикселей */
+}
+
+.FeaturesListItemIcon {
+  margin-bottom: 17px; /* нижний внешний отступ элемента блока FeaturesListItemIcon 17 пикселей */
+}
+
+.FeaturesListItemText {
+  margin-top: 17px; /* верхний внешний отступ элемента блока FeaturesListItemText 17 пикселей */
+}
+
+.FeaturesVideo {
+  margin: 132px auto 0; /* верхний внешний отступ блока FeaturesVideo 132 пикселей, отступы по бокам автоматические */
+  width: 1177px; /* ширина блока FeaturesVideo 1177 пикселей */
+  height: 658px; /* высота блока FeaturesVideo 658 пикселей */
+  background-image: url(/screen.jpg); /* задний фон блока FeaturesVideo */
+  background-size: cover; /* фоновое изображение растягивается на всю ширину блока */
+  background-position: center; /* фоновое изображение выравнивается по центру */
+  background-repeat: no-repeat; /* фоновое изображение не повторяется */
+  display: flex; /* для позиционирование дочернего элемента блока FeaturesVideo */
+  justify-content: center; /* дочерний элемент блока FeaturesVideo выравнивается по центру по горизонтали */
+  align-items: center; /* дочерний элемент блока FeaturesVideo выравнивается по центру по вертикали */
+}
+
+.FeaturesVideoButton {
+  width: 187px; /* ширина элемента блока FeaturesVideoButton 187 пикселей */
+  height: 187px; /* высота элемента блока FeaturesVideoButton 187 пикселей */
+  border-radius: 50%; /* радиус скругления углов элемента блока FeaturesVideoButton 50% */
+}
+
+.Advantage {
+  max-width: 1283px; /* максимальная ширина блока Advantage 1283 пикселей */
+  margin: 226px auto; /* верхний и нижний внешние отступы блока Advantage 226 пикселей, отступы по бокам автоматические */
+  padding: 43px 0; /* верхний и нижний внутренние отступы блока Advantage 43 пикселей, отступы по бокам 0 */
+  display: grid; /* элементы блока Advantage выстраиваются в сетку */
+  grid-template-columns: auto auto; /* ширина колонок 1 и 2 равна ширине содержимого */
+  column-gap: 50px; /* расстояние между колонками 50 пикселей */
+}
+
+.AdvantageButton {
+  margin-top: 60px; /* верхний внешний отступ элемента блока AdvantageButton 60 пикселей */
+  width: 236px; /* ширина элемента блока AdvantageButton 236 пикселей */ 
+}
+
+.Newsletter {
+  max-width: 1440px; /* максимальная ширина блока Newsletter 1440 пикселей */
+  margin: 0 auto; /* отступы по бокам автоматические */
+  padding: 43px 0; /* верхний и нижний внутренние отступы блока Newsletter 43 пикселей, отступы по бокам 0 */
+  display: grid; /* элементы блока Newsletter выстраиваются в сетку */
+  grid-template-columns: auto auto; /* ширина колонок 1 и 2 равна ширине содержимого */
+  column-gap: 50px; /* расстояние между колонками 50 пикселей */
+}
+
+.Newsletter > div:last-child {
+  padding-top: 121px; /* верхний внутренний отступ второго дочернего элемента блока Newsletter 121 пикселей */
+}
+
+.NewsletterForm {
+  margin-top: 30px; /* верхний внешний отступ элемента блока NewsletterForm 30 пикселей */
+}
+
+.NewsletterInput, .NewsletterButton {
+  margin: 36px 0; /* верхний и нижний внешние отступы элементов блока NewsletterInput и NewsletterButton 36 пикселей, отступы по бокам 0 */
+}
+
+.NewsletterInput {
+  width: 273px; /* ширина элемента блока NewsletterInput 273 пикселей */
+}
+
+.NewsletterButton {
+  width: 177px; /* ширина элемента блока NewsletterButton 177 пикселей */
+  margin-left: 12px; /* левый внешний отступ элемента блока NewsletterButton 12 пикселей */
 }
