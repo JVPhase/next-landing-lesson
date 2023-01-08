@@ -223,7 +223,32 @@ export default function Home() {
           <h3>Try For Free</h3>
         </Button>
       </div>
-      <div className={styles.Testimonials}></div>
+      <div className={styles.Testimonials}>
+        <h2>Testimonials</h2>
+        <Image
+          src="/ibm.svg"
+          alt="ibm"
+          width={150}
+          height={60}
+          className={styles.TestimonialsIbm}
+        />
+        <h4>
+          Most calendars are designed for teams. Slate is designed for
+          freelancers
+          <br />
+          who want a simple way to plan their schedule.
+        </h4>
+        <div className={styles.TestimonialsContent}>
+          <Image src="/avatar.png" alt="avatar" width={50} height={50} />
+          <div className={styles.TestimonialsText}>
+            <p>Organize across</p>
+            <a>Ui designer</a>
+          </div>
+        </div>
+        <Button className={styles.TestimonialsButton}>
+          <h3>More Testimonials</h3>
+        </Button>
+      </div>
       <div className={styles.Pricing}></div>
       <div className={styles.Contact}></div>
       <div className={styles.Footer}></div>

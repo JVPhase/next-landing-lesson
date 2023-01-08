@@ -639,3 +639,67 @@ Slate is designed for freelancers</h4>
   width: 236px; /* ширина элемента блока PartnersButton 236 пикселей */
 }
 ```
+
+### Testimonials
+
+Теперь давайте добавим блок Testimonials.
+
+```tsx
+<h2>Testimonials</h2>
+<Image
+  src="/ibm.svg"
+  alt="ibm"
+  width={150}
+  height={60}
+  className={styles.TestimonialsIbm}
+/>
+<h4>
+  Most calendars are designed for teams. Slate is designed for
+  freelancers
+  <br />
+  who want a simple way to plan their schedule.
+</h4>
+<div className={styles.TestimonialsContent}>
+  <Image
+    src="/avatar.png"
+    alt="avatar"
+    width={50}
+    height={50}
+  />
+  <div className={styles.TestimonialsText}>
+    <p>Organize across</p>
+    <a>Ui designer</a>
+  </div>
+</div>
+<Button className={styles.TestimonialsButton}>
+  <h3>More Testimonials</h3>
+</Button>
+```
+
+Теперь давайте добавим стили для блока Testimonials.
+
+```css
+.Testimonials {
+  margin: 130px auto 80px; /* верхний внешний отступ блока Testimonials 130 пикселей, отступы по бокам автоматические, нижний внешний отступ блока Testimonials 80 пикселей */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.TestimonialsIbm {
+  margin: 80px auto; /* верхний внешний отступ блока TestimonialsIbm 80 пикселей, отступы по бокам автоматические */
+}
+
+.TestimonialsContent {
+  margin: 80px auto; /* верхний внешний отступ блока TestimonialsContent 80 пикселей, отступы по бокам автоматические */
+  display: flex; /* элементы блока TestimonialsContent выстраиваются в ряд */
+  width: fit-content; /* ширина блока TestimonialsContent подстраивается под ширину содержимого */
+  text-align: left; /* выравнивание текста по левому краю */
+}
+
+.TestimonialsText {
+  margin-left: 13px; /* левый внешний отступ элемента блока TestimonialsText 13 пикселей */
+}
+
+.TestimonialsButton {
+  width: 286px; /* ширина элемента блока TestimonialsButton 286 пикселей */
+}
+```

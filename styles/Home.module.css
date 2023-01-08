@@ -168,3 +168,27 @@
 .PartnersButton {
   width: 236px; /* ширина элемента блока PartnersButton 236 пикселей */
 }
+
+.Testimonials {
+  margin: 130px auto 80px; /* верхний внешний отступ блока Testimonials 130 пикселей, отступы по бокам автоматические, нижний внешний отступ блока Testimonials 80 пикселей */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.TestimonialsIbm {
+  margin: 80px auto; /* верхний внешний отступ блока TestimonialsIbm 80 пикселей, отступы по бокам автоматические */
+}
+
+.TestimonialsContent {
+  margin: 80px auto; /* верхний внешний отступ блока TestimonialsContent 80 пикселей, отступы по бокам автоматические */
+  display: flex; /* элементы блока TestimonialsContent выстраиваются в ряд */
+  width: fit-content; /* ширина блока TestimonialsContent подстраивается под ширину содержимого */
+  text-align: left; /* выравнивание текста по левому краю */
+}
+
+.TestimonialsText {
+  margin-left: 13px; /* левый внешний отступ элемента блока TestimonialsText 13 пикселей */
+}
+
+.TestimonialsButton {
+  width: 286px; /* ширина элемента блока TestimonialsButton 286 пикселей */
+}
