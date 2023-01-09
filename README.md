@@ -50,20 +50,22 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  color: #252b42; /* цвет текста взят из фигмы */
 }
 
 /* следующие стили элементов взяты из компонентов фигмы  */
 
 h1 {
-  font-size: 74px;
-  line-height: 84px;
-  font-weight: 700;
+  font-size: 74px; /* размер шрифта */
+  line-height: 84px; /* высота строки */
+  font-weight: 700; /* жирность шрифта */
 }
 
 h2 {
   font-size: 48px;
   line-height: 56px;
   font-weight: 400;
+  margin-bottom: 50px; /* внешний отступ снизу */
 }
 
 h3 {
@@ -91,7 +93,7 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none; /* убираем подчеркивание у ссылок */
   font-size: 15px;
   line-height: 28px;
 }
@@ -685,7 +687,7 @@ Slate is designed for freelancers</h4>
 }
 
 .TestimonialsIbm {
-  margin: 80px auto; /* верхний внешний отступ блока TestimonialsIbm 80 пикселей, отступы по бокам автоматические */
+  margin: 30px auto 80px; /* верхний внешний отступ блока TestimonialsIbm 30 пикселей, отступы по бокам автоматические, нижний внешний отступ блока TestimonialsIbm 80 пикселей */
 }
 
 .TestimonialsContent {
@@ -702,4 +704,448 @@ Slate is designed for freelancers</h4>
 .TestimonialsButton {
   width: 286px; /* ширина элемента блока TestimonialsButton 286 пикселей */
 }
+```
+
+### Pricing
+
+Теперь давайте добавим блок Pricing. Он состоит из заголовка `h2`, подзаголовка `h4` и блока `div` с классом `PricingList`, в котором есть элементы `div` с классом `PricingListItem`, которые в свою очередь состоят из заголовка `h3`, подзаголовка `h5`, блока цены со значением `h1`, валютой `h3`, периодом оплаты `h5`, список предложений `ul` и кнопки заказа `Button`.
+
+```tsx
+<h2>Pricing</h2>
+<h4>
+  Most calendars are designed for teams.
+  <br />
+  Slate is designed for freelancers
+</h4>
+<div className={styles.PricingList}>
+  <div className={styles.PricingListItem}>
+    <h3>FREE</h3>
+    <h5>
+      Organize across all
+      <br />
+      apps by hand
+    </h5>
+    <div className={styles.PricingListItemPrice}>
+      <h1>0</h1>
+      <div className={styles.PricingListItemPriceText}>
+        <h3>$</h3>
+        <h5>Per Month</h5>
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+    </ul>
+    <Button className={styles.PricingListItemButton}>Order Now</Button>
+  </div>
+  <div className={styles.PricingListItem}>
+    <h3>STANDART</h3>
+    <h5>
+      Organize across all
+      <br />
+      apps by hand
+    </h5>
+    <div className={styles.PricingListItemPrice}>
+      <h1>10</h1>
+      <div className={styles.PricingListItemPriceText}>
+        <h3>$</h3>
+        <h5>Per Month</h5>
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+    </ul>
+    <Button className={styles.PricingListItemButton}>Order Now</Button>
+  </div>
+  <div className={styles.PricingListItem}>
+    <h3>BUSINESS</h3>
+    <h5>
+      Organize across all
+      <br />
+      apps by hand
+    </h5>
+    <div className={styles.PricingListItemPrice}>
+      <h1>99</h1>
+      <div className={styles.PricingListItemPriceText}>
+        <h3>$</h3>
+        <h5>Per Month</h5>
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+      <li>
+        <a>Pricing Feature</a>
+      </li>
+    </ul>
+    <Button className={styles.PricingListItemButton}>Order Now</Button>
+  </div>
+```
+
+Теперь добавим стили для блока Pricing.
+
+```css
+.Pricing {
+  background-color: #252b42; /* фоновый цвет блока Pricing #252b42 */
+  color: #ffffff; /* цвет текста блока Pricing #ffffff */
+  text-align: center; /* выравнивание текста по центру */
+  padding: 100px 0; /* верхний и нижний внутренние отступы блока Pricing 100 пикселей, отступы по бокам 0 пикселей */
+}
+
+.PricingList {
+  margin: 80px auto 0; /* верхний внешний отступ блока PricingList 80 пикселей, отступы по бокам автоматические, нижний внешний отступ блока PricingList 0 пикселей */
+  max-width: 1105px; /* максимальная ширина блока PricingList 1105 пикселей */
+  display: grid; /* элементы блока PricingList выстраиваются в сетку */
+  grid-template-columns: auto auto auto; /* количество колонок в сетке 2 */
+  grid-gap: 50px; /* расстояние между элементами сетки 50 пикселей */
+}
+
+.PricingListItem {
+  margin: 43px 0; /* верхний и нижний внешние отступы элемента блока PricingListItem 43 пикселей, отступы по бокам 0 пикселей */
+  background-color: #ffffff; /* фоновый цвет элемента блока PricingListItem #ffffff */
+  color: #252b42; /* цвет текста элемента блока PricingListItem #252b42 */
+  border-radius: 10px; /* скругление углов элемента блока PricingListItem 10 пикселей */
+  padding: 40px; /* внутренние отступы элемента блока PricingListItem 40 пикселей */
+}
+
+.PricingListItemPrice {
+  width: fit-content; /* ширина элемента блока PricingListItemPrice подстраивается под ширину содержимого */
+  margin: 30px auto; /* верхний внешний отступ элемента блока PricingListItemPrice 30 пикселей, отступы по бокам автоматические */
+  display: flex; /* элементы блока PricingListItemPrice выстраиваются в ряд */
+}
+
+.PricingListItemPriceText {
+  margin-left: 10px; /* левый внешний отступ элемента блока PricingListItemPriceText 10 пикселей */
+  margin-top: 10px; /* верхний внешний отступ элемента блока PricingListItemPriceText 10 пикселей */
+  text-align: left; /* выравнивание текста по левому краю */
+}
+
+.Pricing ul { /* селектор элемента списка ul в блоке Pricing */
+  list-style: none; /* убираем маркеры списка */
+  padding: 0; /* обнуляем внутренние отступы списка */
+  line-height: 48px; /* высота строки 48 пикселей */
+}
+
+.PricingListItemButton {
+  width: 100%; /* ширина элемента блока PricingListItemButton 100% */
+  margin-top: 30px; /* верхний внешний отступ элемента блока PricingListItemButton 30 пикселей */
+}
+
+.PricingListItem:nth-child(2) { /* селектор элемента блока PricingListItem, который является вторым в списке */
+  margin: 0; /* обнуляем внешние отступы элемента блока PricingListItem */
+  background-color: #2091F9; /* фоновый цвет элемента блока PricingListItem #2091F9 */
+  color: #ffffff; /* цвет текста элемента блока PricingListItem #ffffff */
+  border-radius: 10px; /* скругление углов элемента блока PricingListItem 10 пикселей */
+  padding: 83px 40px; /* внутренние отступы элемента блока PricingListItem 83 пикселей сверху и снизу, 40 пикселей по бокам */
+}
+
+.PricingListItem:nth-child(2) .PricingListItemButton { /* селектор элемента блока PricingListItemButton, который является вторым в списке */
+  background-color: #ffffff; /* фоновый цвет элемента блока PricingListItemButton #ffffff */
+  color: #2091F9; /* цвет текста элемента блока PricingListItemButton #2091F9 */
+}
+```
+
+### Contact
+
+Создадим блок Contact, который будет содержать, как и в других блоках, заголовок `h2` и подзаголовок `h4`, форму обратной связи `form` с классом `ContactForm`, блок с контактной информацией `div` с классом `ContactInfo`, в котором будут email, номер телефона, адрес, изображение карты и компонент социальных сетей `SocialLinks`.
+
+```tsx
+<h2>Contact Us</h2>
+<h4>
+  Most calendars are designed for teams.
+  <br /> Slate is designed for freelancers
+</h4>
+<div className={styles.ContactRow}>
+  <form className={styles.ContactForm}></form>
+  <div className={styles.ContactInfo}>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/pin-blue.svg" alt="pin" width={27} height={33} />
+      <h5>
+        6386 Spring St undefined Anchorage,
+        <br />
+        Georgia 12473 United States
+      </h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/phone-blue.svg" alt="phone" width={21} height={33} />
+      <h5>(843) 555-0130</h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/mail-blue.svg" alt="mail" width={27} height={22} />
+      <h5>willie.jennings@example.com</h5>
+    </div>
+    <div className={styles.ContactInfoMap}>
+      <Image src="/map.jpg" alt="map" width={516} height={323} />
+    </div>
+    <SocialLinks isBlue />
+  </div>
+</div>
+```
+
+Подробнее остановимся на форме обратной связи внутри ее содержатся заголовок `h3`, 3 пол ввода текста и кнопка. Третье поле ввода многострочное (тег `textarea`), а первые две однострочные (компонент `Input`).
+
+добавим в форму следующий код
+
+```tsx
+<h3>Contact Us</h3>
+<Input
+  className={styles.ContactFormInput}
+  placeholder="Your Name"
+/>
+<Input
+  className={styles.ContactFormInput}
+  placeholder="Your Email"
+/>
+<textarea
+  className={styles.ContactFormTextarea}
+  placeholder="Your Message"
+/>
+<Button className={styles.ContactFormButton}>Send</Button>
+```
+
+весь код блока Contact
+
+```tsx
+<h2>Contact Us</h2>
+<h4>
+  Most calendars are designed for teams.
+  <br /> Slate is designed for freelancers
+</h4>
+<div className={styles.ContactRow}>
+  <form className={styles.ContactForm}>
+    <h3>Contact Us</h3>
+    <Input
+      className={styles.ContactFormInput}
+      placeholder="Your Name"
+    />
+    <Input
+      className={styles.ContactFormInput}
+      placeholder="Your Email"
+    />
+    <textarea
+      className={styles.ContactFormTextarea}
+      placeholder="Your Message"
+    />
+    <Button className={styles.ContactFormButton}>Send</Button>
+  </form>
+  <div className={styles.ContactInfo}>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/pin-blue.svg" alt="pin" width={27} height={33} />
+      <h5>
+        6386 Spring St undefined Anchorage,
+        <br />
+        Georgia 12473 United States
+      </h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/phone-blue.svg" alt="phone" width={21} height={33} />
+      <h5>(843) 555-0130</h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/mail-blue.svg" alt="mail" width={27} height={22} />
+      <h5>willie.jennings@example.com</h5>
+    </div>
+    <div className={styles.ContactInfoMap}>
+      <Image src="/map.jpg" alt="map" width={516} height={323} />
+    </div>
+    <SocialLinks isBlue />
+  </div>
+</div>
+```
+
+А теперь добавим стили для блока Contact
+
+```css
+.Contact {
+  margin-top: 203px; /* верхний внешний отступ блока Contact 203 пикселя */
+  text-align: center;
+}
+
+.ContactRow {
+  max-width: 1261px; /* максимальная ширина элемента блока ContactRow 1261 пикселей */
+  display: flex; /* элементы блока ContactRow выстраиваются в ряд */
+  margin: 50px auto 102px; /* верхний и нижний внешние отступы элемента блока ContactRow 50 и 102 пикселей, отступы по бокам автоматические */
+}
+
+.ContactForm {
+  text-align: left;
+  width: 453px; /* ширина элемента блока ContactForm 453 пикселя */
+  border: 1px solid #dddddd; /* рамка элемента блока ContactForm 1 пиксель, цвет #dddddd */
+  border-radius: 20px; /* скругление углов элемента блока ContactForm 20 пикселей */
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07); /* тень элемента блока ContactForm 0 пикселей по горизонтали и вертикали, 13 пикселей размытия, 19 пикселей расстояния, цвет rgba(0, 0, 0, 0.07) */
+  padding: 52px 50px; /* внутренние отступы элемента блока ContactForm 52 пикселя сверху и снизу, 50 пикселей по бокам */
+}
+
+.ContactForm h3 {
+  text-align: center;
+}
+
+.ContactFormInput {
+  width: 100%; /* ширина элемента блока ContactFormInput 100% */
+  margin-top: 45px; /* верхний внешний отступ элемента блока ContactFormInput 45 пикселей */
+}
+
+.ContactFormTextarea {
+  width: 353px; /* ширина элемента блока ContactFormTextarea 353 пикселя */
+  height: 193px; /* высота элемента блока ContactFormTextarea 193 пикселя */
+  background: #F5F5F5; /* фоновый цвет элемента блока ContactFormTextarea #F5F5F5 */
+  border: 1px solid #E8E8E8; /* рамка элемента блока ContactFormTextarea 1 пиксель, цвет #E8E8E8 */
+  padding: 23px 20px; /* внутренние отступы элемента блока ContactFormTextarea 23 пикселя сверху и снизу, 20 пикселей по бокам */
+  margin-top: 45px; /* верхний внешний отступ элемента блока ContactFormTextarea 45 пикселей */
+  font-size: 15px; /* размер шрифта элемента блока ContactFormTextarea 15 пикселей */
+}
+
+.ContactFormButton {
+  margin-top: 45px; /* верхний внешний отступ элемента блока ContactFormButton 45 пикселей */
+  width: 145px; /* ширина элемента блока ContactFormButton 145 пикселей */
+}
+
+.ContactInfo {
+  flex: 1; /* элемент блока ContactInfo занимает все свободное пространство */
+  margin-left: 50px; /* левый внешний отступ элемента блока ContactInfo 50 пикселей */
+  text-align: left;
+  display: grid; /* элементы блока ContactInfo выстраиваются в сетку */
+  grid-template-columns: auto auto auto;
+  column-gap: 15px; /* расстояние между колонками элемента блока ContactInfo 15 пикселей */
+}
+
+.ContactInfoItem {
+  text-align: center; /* выравнивание текста элемента блока ContactInfoItem по центру */
+}
+
+.ContactInfoItem h5 { /* заголовок элемента блока ContactInfoItem */
+  height: 46px; /* высота элемента блока ContactInfoItem 46 пикселей */
+  display: flex; /* для центрирования текста по вертикали */
+  align-items: center; /* для центрирования текста по вертикали */
+}
+
+.ContactInfoMap {
+  margin: 60px 120px; /* верхний и нижний внешние отступы элемента блока ContactInfoMap 60 пикселей, левый и правый внешние отступы элемента блока ContactInfoMap 120 пикселей */
+  grid-column: 1 / span 3; /* элемент блока ContactInfoMap занимает 3 колонки */
+}
+```
+
+### Footer
+
+Футер состоит из блоков со списками ссылок и блока с контактами и социальными сетями.
+
+добавим в блок `div` c классом `Footer` следующий код:
+
+```tsx
+<div className={styles.FooterRow}>
+  <div className={styles.FooterItem}>
+    <h3>Pages</h3>
+    <ul>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>Product</a>
+      </li>
+      <li>
+        <a>Pricing</a>
+      </li>
+      <li>
+        <a>About</a>
+      </li>
+      <li>
+        <a>Contact</a>
+      </li>
+    </ul>
+  </div>
+  <div className={styles.FooterItem}>
+    <h3>Tomothy</h3>
+    <ul>
+      <li>
+        <a>Eleanor Edwards</a>
+      </li>
+      <li>
+        <a>Ted Robertson</a>
+      </li>
+      <li>
+        <a>Annette Russell</a>
+      </li>
+      <li>
+        <a>Jennie Mckinney</a>
+      </li>
+      <li>
+        <a>Gloria Richards</a>
+      </li>
+    </ul>
+  </div>
+  <div className={styles.FooterItem}>
+    <h3>Jane Black</h3>
+    <ul>
+      <li>
+        <a>Philip Jones</a>
+      </li>
+      <li>
+        <a>Product</a>
+      </li>
+      <li>
+        <a>Colleen Russell</a>
+      </li>
+      <li>
+        <a>Marvin Hawkins</a>
+      </li>
+      <li>
+        <a>Bruce Simmmons</a>
+      </li>
+    </ul>
+  </div>
+  <div className={styles.FooterItem}>
+    <div className={styles.FooterContact}>
+      <Image src="/pin-white.svg" alt="pin" width={27} height={33} />
+      <a>7480 Mockingbird Hill undefined</a>
+    </div>
+    <div className={styles.FooterContact}>
+      <Image src="/phone-white.svg" alt="pin" width={21} height={33} />
+      <a>(239) 555-0108</a>
+    </div>
+    <SocialLinks />
+  </div>
+</div>
+```
+
+Теперь добавим стили для футера все в тот же файл Home.module.css
+
+```css
+
 ```

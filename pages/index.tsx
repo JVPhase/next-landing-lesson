@@ -249,9 +249,237 @@ export default function Home() {
           <h3>More Testimonials</h3>
         </Button>
       </div>
-      <div className={styles.Pricing}></div>
-      <div className={styles.Contact}></div>
-      <div className={styles.Footer}></div>
+      <div className={styles.Pricing}>
+        <h2>Pricing</h2>
+        <h4>
+          Most calendars are designed for teams.
+          <br />
+          Slate is designed for freelancers
+        </h4>
+        <div className={styles.PricingList}>
+          <div className={styles.PricingListItem}>
+            <h3>FREE</h3>
+            <h5>
+              Organize across all
+              <br />
+              apps by hand
+            </h5>
+            <div className={styles.PricingListItemPrice}>
+              <h1>0</h1>
+              <div className={styles.PricingListItemPriceText}>
+                <h3>$</h3>
+                <h5>Per Month</h5>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+            </ul>
+            <Button className={styles.PricingListItemButton}>Order Now</Button>
+          </div>
+          <div className={styles.PricingListItem}>
+            <h3>STANDART</h3>
+            <h5>
+              Organize across all
+              <br />
+              apps by hand
+            </h5>
+            <div className={styles.PricingListItemPrice}>
+              <h1>10</h1>
+              <div className={styles.PricingListItemPriceText}>
+                <h3>$</h3>
+                <h5>Per Month</h5>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+            </ul>
+            <Button className={styles.PricingListItemButton}>Order Now</Button>
+          </div>
+          <div className={styles.PricingListItem}>
+            <h3>BUSINESS</h3>
+            <h5>
+              Organize across all
+              <br />
+              apps by hand
+            </h5>
+            <div className={styles.PricingListItemPrice}>
+              <h1>99</h1>
+              <div className={styles.PricingListItemPriceText}>
+                <h3>$</h3>
+                <h5>Per Month</h5>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+              <li>
+                <a>Pricing Feature</a>
+              </li>
+            </ul>
+            <Button className={styles.PricingListItemButton}>Order Now</Button>
+          </div>
+        </div>
+      </div>
+      <div className={styles.Contact}>
+        <h2>Contact Us</h2>
+        <h4>
+          Most calendars are designed for teams.
+          <br /> Slate is designed for freelancers
+        </h4>
+        <div className={styles.ContactRow}>
+          <form className={styles.ContactForm}>
+            <h3>Contact Us</h3>
+            <Input
+              className={styles.ContactFormInput}
+              placeholder="Your Name"
+            />
+            <Input
+              className={styles.ContactFormInput}
+              placeholder="Your Email"
+            />
+            <textarea
+              className={styles.ContactFormTextarea}
+              placeholder="Your Message"
+            />
+            <Button className={styles.ContactFormButton}>Send</Button>
+          </form>
+          <div className={styles.ContactInfo}>
+            <div className={styles.ContactInfoItem}>
+              <Image src="/pin-blue.svg" alt="pin" width={27} height={33} />
+              <h5>
+                6386 Spring St undefined Anchorage,
+                <br />
+                Georgia 12473 United States
+              </h5>
+            </div>
+            <div className={styles.ContactInfoItem}>
+              <Image src="/phone-blue.svg" alt="phone" width={21} height={33} />
+              <h5>(843) 555-0130</h5>
+            </div>
+            <div className={styles.ContactInfoItem}>
+              <Image src="/mail-blue.svg" alt="mail" width={27} height={22} />
+              <h5>willie.jennings@example.com</h5>
+            </div>
+            <div className={styles.ContactInfoMap}>
+              <Image src="/map.jpg" alt="map" width={516} height={323} />
+            </div>
+            <SocialLinks isBlue />
+          </div>
+        </div>
+      </div>
+      <div className={styles.Footer}>
+        <div className={styles.FooterRow}>
+          <div className={styles.FooterItem}>
+            <h3>Pages</h3>
+            <ul>
+              <li>
+                <a>Home</a>
+              </li>
+              <li>
+                <a>Product</a>
+              </li>
+              <li>
+                <a>Pricing</a>
+              </li>
+              <li>
+                <a>About</a>
+              </li>
+              <li>
+                <a>Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.FooterItem}>
+            <h3>Tomothy</h3>
+            <ul>
+              <li>
+                <a>Eleanor Edwards</a>
+              </li>
+              <li>
+                <a>Ted Robertson</a>
+              </li>
+              <li>
+                <a>Annette Russell</a>
+              </li>
+              <li>
+                <a>Jennie Mckinney</a>
+              </li>
+              <li>
+                <a>Gloria Richards</a>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.FooterItem}>
+            <h3>Jane Black</h3>
+            <ul>
+              <li>
+                <a>Philip Jones</a>
+              </li>
+              <li>
+                <a>Product</a>
+              </li>
+              <li>
+                <a>Colleen Russell</a>
+              </li>
+              <li>
+                <a>Marvin Hawkins</a>
+              </li>
+              <li>
+                <a>Bruce Simmmons</a>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.FooterItem}>
+            <div className={styles.FooterContact}>
+              <Image src="/pin-white.svg" alt="pin" width={27} height={33} />
+              <a>7480 Mockingbird Hill undefined</a>
+            </div>
+            <div className={styles.FooterContact}>
+              <Image src="/phone-white.svg" alt="pin" width={21} height={33} />
+              <a>(239) 555-0108</a>
+            </div>
+            <SocialLinks />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
