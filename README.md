@@ -1132,14 +1132,16 @@ Slate is designed for freelancers</h4>
   </div>
   <div className={styles.FooterItem}>
     <div className={styles.FooterContact}>
-      <Image src="/pin-white.svg" alt="pin" width={27} height={33} />
+      <Image src="/pin-white.svg" alt="pin" width={46} height={47} />
       <a>7480 Mockingbird Hill undefined</a>
     </div>
     <div className={styles.FooterContact}>
-      <Image src="/phone-white.svg" alt="pin" width={21} height={33} />
+      <Image src="/phone-white.svg" alt="pin" width={46} height={47} />
       <a>(239) 555-0108</a>
     </div>
-    <SocialLinks />
+    <div className={styles.FooterSocialLinks}>
+      <SocialLinks />
+    </div>
   </div>
 </div>
 ```
@@ -1147,5 +1149,50 @@ Slate is designed for freelancers</h4>
 Теперь добавим стили для футера все в тот же файл Home.module.css
 
 ```css
+.Footer {
+  background-color: #252b42; /* фоновый цвет элемента блока Footer #252b42 */
+  color: #ffffff; /* цвет текста элемента блока Footer #ffffff */
+  padding: 150px 0; /* внутренние отступы элемента блока Footer 150 пикселей сверху и снизу, 0 пикселей по бокам */
+}
 
+.FooterRow {
+  margin: 0 auto; /* верхний и нижний внешние отступы элемента блока FooterRow 150 пикселей, левый и правый внешние отступы элемента блока FooterRow автоматические */
+  display: flex; /* элементы блока FooterRow выстраиваются в ряд */
+  width: 991px; /* ширина элемента блока FooterRow 991 пикселей */
+}
+
+.FooterItem {
+  min-width: 170px; /* минимальная ширина элемента блока FooterItem 170 пикселей */
+  margin-right: 20px; /* правый внешний отступ элемента блока FooterItem 20 пикселей */
+}
+
+.FooterItem:last-child { /* последний элемент блока FooterItem */
+  margin-left: 105px; /* левый внешний отступ элемента блока FooterItem 105 пикселей */
+  margin-right: 0px; /* правый внешний отступ элемента блока FooterItem 0 пикселей */
+}
+
+.FooterItem ul { /* список элемента блока FooterItem */
+  list-style: none; /* убираем маркеры списка */
+  padding: 0; /* обнуляем внутренние отступы списка */
+  margin-top: 25px; /* верхний внешний отступ списка 25 пикселей */
+}
+
+.FooterItem ul a { /* ссылки в списке */
+  line-height: 50px; /* высота строки списка 50 пикселей */
+}
+
+.FooterContact {
+  display: flex; /* элементы блока FooterContact выстраиваются в ряд */
+  margin-bottom: 10px; /* нижний внешний отступ элемента блока FooterContact 10 пикселей */
+}
+
+.FooterContact a {
+  line-height: 46px; /* высота строки элемента блока FooterContact 46 пикселей */
+}
+
+.FooterSocialLinks {
+  margin-top: 50px; /* верхний внешний отступ элемента блока FooterSocialLinks 50 пикселей */
+}
 ```
+
+Вы просто супер! Лендинг почти готов, осталось адаптировать его под мобильные устройства. Чем мы займемся в следующей части. Увидимся там!

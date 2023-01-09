@@ -469,14 +469,16 @@ export default function Home() {
           </div>
           <div className={styles.FooterItem}>
             <div className={styles.FooterContact}>
-              <Image src="/pin-white.svg" alt="pin" width={27} height={33} />
+              <Image src="/pin-white.svg" alt="pin" width={46} height={47} />
               <a>7480 Mockingbird Hill undefined</a>
             </div>
             <div className={styles.FooterContact}>
-              <Image src="/phone-white.svg" alt="pin" width={21} height={33} />
+              <Image src="/phone-white.svg" alt="pin" width={46} height={47} />
               <a>(239) 555-0108</a>
             </div>
-            <SocialLinks />
+            <div className={styles.FooterSocialLinks}>
+              <SocialLinks />
+            </div>
           </div>
         </div>
       </div>

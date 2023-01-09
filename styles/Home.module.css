@@ -336,3 +336,31 @@
   min-width: 170px; /* минимальная ширина элемента блока FooterItem 170 пикселей */
   margin-right: 20px; /* правый внешний отступ элемента блока FooterItem 20 пикселей */
 }
+
+.FooterItem:last-child { /* последний элемент блока FooterItem */
+  margin-left: 105px; /* левый внешний отступ элемента блока FooterItem 105 пикселей */
+  margin-right: 0px; /* правый внешний отступ элемента блока FooterItem 0 пикселей */
+}
+
+.FooterItem ul { /* список элемента блока FooterItem */
+  list-style: none; /* убираем маркеры списка */
+  padding: 0; /* обнуляем внутренние отступы списка */
+  margin-top: 25px; /* верхний внешний отступ списка 25 пикселей */
+}
+
+.FooterItem ul a { /* ссылки в списке */
+  line-height: 50px; /* высота строки списка 50 пикселей */
+}
+
+.FooterContact {
+  display: flex; /* элементы блока FooterContact выстраиваются в ряд */
+  margin-bottom: 10px; /* нижний внешний отступ элемента блока FooterContact 10 пикселей */
+}
+
+.FooterContact a {
+  line-height: 46px; /* высота строки элемента блока FooterContact 46 пикселей */
+}
+
+.FooterSocialLinks {
+  margin-top: 50px; /* верхний внешний отступ элемента блока FooterSocialLinks 50 пикселей */
+}
