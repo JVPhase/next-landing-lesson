@@ -106,7 +106,7 @@
 
 .AdvantageButton {
   margin-top: 60px; /* верхний внешний отступ элемента блока AdvantageButton 60 пикселей */
-  width: 236px; /* ширина элемента блока AdvantageButton 236 пикселей */ 
+  width: 236px; /* ширина элемента блока AdvantageButton 236 пикселей */
 }
 
 .Newsletter {
@@ -126,7 +126,8 @@
   margin-top: 30px; /* верхний внешний отступ элемента блока NewsletterForm 30 пикселей */
 }
 
-.NewsletterInput, .NewsletterButton {
+.NewsletterInput,
+.NewsletterButton {
   margin: 36px 0; /* верхний и нижний внешние отступы элементов блока NewsletterInput и NewsletterButton 36 пикселей, отступы по бокам 0 */
 }
 
@@ -149,11 +150,11 @@
   margin: 80px auto; /* верхний внешний отступ блока PartnersList 80 пикселей, отступы по бокам автоматические */
   display: flex; /* элементы блока PartnersList выстраиваются в ряд */
   flex-wrap: wrap; /* элементы блока PartnersList переносятся на новую строку, если не помещаются в ряд */
-  border: 0.5px solid #D8D8D8; /* рамка блока PartnersList 0.5 пикселя, цвет #D8D8D8 */
+  border: 0.5px solid #d8d8d8; /* рамка блока PartnersList 0.5 пикселя, цвет #D8D8D8 */
 }
 
 .PartnersItem {
-  border: 0.5px solid #D8D8D8; /* рамка элемента блока PartnersItem 0.5 пикселя, цвет #D8D8D8 */
+  border: 0.5px solid #d8d8d8; /* рамка элемента блока PartnersItem 0.5 пикселя, цвет #D8D8D8 */
   padding: 25px 38px; /* верхний и нижний внутренние отступы элемента блока PartnersItem 0 пикселей, отступы по бокам 38 пикселей */
   flex: 1; /* элемент блока PartnersItem занимает все доступное пространство */
 }
@@ -228,7 +229,8 @@
   text-align: left; /* выравнивание текста по левому краю */
 }
 
-.Pricing ul { /* селектор элемента списка ul в блоке Pricing */
+.Pricing ul {
+  /* селектор элемента списка ul в блоке Pricing */
   list-style: none; /* убираем маркеры списка */
   padding: 0; /* обнуляем внутренние отступы списка */
   line-height: 48px; /* высота строки 48 пикселей */
@@ -239,17 +241,19 @@
   margin-top: 30px; /* верхний внешний отступ элемента блока PricingListItemButton 30 пикселей */
 }
 
-.PricingListItem:nth-child(2) { /* селектор элемента блока PricingListItem, который является вторым в списке */
+.PricingListItem:nth-child(2) {
+  /* селектор элемента блока PricingListItem, который является вторым в списке */
   margin: 0; /* обнуляем внешние отступы элемента блока PricingListItem */
-  background-color: #2091F9; /* фоновый цвет элемента блока PricingListItem #2091F9 */
+  background-color: #2091f9; /* фоновый цвет элемента блока PricingListItem #2091F9 */
   color: #ffffff; /* цвет текста элемента блока PricingListItem #ffffff */
   border-radius: 10px; /* скругление углов элемента блока PricingListItem 10 пикселей */
   padding: 83px 40px; /* внутренние отступы элемента блока PricingListItem 83 пикселей сверху и снизу, 40 пикселей по бокам */
 }
 
-.PricingListItem:nth-child(2) .PricingListItemButton { /* селектор элемента блока PricingListItemButton, который является вторым в списке */
+.PricingListItem:nth-child(2) .PricingListItemButton {
+  /* селектор элемента блока PricingListItemButton, который является вторым в списке */
   background-color: #ffffff; /* фоновый цвет элемента блока PricingListItemButton #ffffff */
-  color: #2091F9; /* цвет текста элемента блока PricingListItemButton #2091F9 */
+  color: #2091f9; /* цвет текста элемента блока PricingListItemButton #2091F9 */
 }
 
 .Contact {
@@ -284,8 +288,8 @@
 .ContactFormTextarea {
   width: 353px; /* ширина элемента блока ContactFormTextarea 353 пикселя */
   height: 193px; /* высота элемента блока ContactFormTextarea 193 пикселя */
-  background: #F5F5F5; /* фоновый цвет элемента блока ContactFormTextarea #F5F5F5 */
-  border: 1px solid #E8E8E8; /* рамка элемента блока ContactFormTextarea 1 пиксель, цвет #E8E8E8 */
+  background: #f5f5f5; /* фоновый цвет элемента блока ContactFormTextarea #F5F5F5 */
+  border: 1px solid #e8e8e8; /* рамка элемента блока ContactFormTextarea 1 пиксель, цвет #E8E8E8 */
   padding: 23px 20px; /* внутренние отступы элемента блока ContactFormTextarea 23 пикселя сверху и снизу, 20 пикселей по бокам */
   margin-top: 45px; /* верхний внешний отступ элемента блока ContactFormTextarea 45 пикселей */
   font-size: 15px; /* размер шрифта элемента блока ContactFormTextarea 15 пикселей */
@@ -309,7 +313,8 @@
   text-align: center; /* выравнивание текста элемента блока ContactInfoItem по центру */
 }
 
-.ContactInfoItem h5 { /* заголовок элемента блока ContactInfoItem */
+.ContactInfoItem h5 {
+  /* заголовок элемента блока ContactInfoItem */
   height: 46px; /* высота элемента блока ContactInfoItem 46 пикселей */
   display: flex; /* для центрирования текста по вертикали */
   align-items: center; /* для центрирования текста по вертикали */
@@ -337,18 +342,21 @@
   margin-right: 20px; /* правый внешний отступ элемента блока FooterItem 20 пикселей */
 }
 
-.FooterItem:last-child { /* последний элемент блока FooterItem */
+.FooterItem:last-child {
+  /* последний элемент блока FooterItem */
   margin-left: 105px; /* левый внешний отступ элемента блока FooterItem 105 пикселей */
   margin-right: 0px; /* правый внешний отступ элемента блока FooterItem 0 пикселей */
 }
 
-.FooterItem ul { /* список элемента блока FooterItem */
+.FooterItem ul {
+  /* список элемента блока FooterItem */
   list-style: none; /* убираем маркеры списка */
   padding: 0; /* обнуляем внутренние отступы списка */
   margin-top: 25px; /* верхний внешний отступ списка 25 пикселей */
 }
 
-.FooterItem ul a { /* ссылки в списке */
+.FooterItem ul a {
+  /* ссылки в списке */
   line-height: 50px; /* высота строки списка 50 пикселей */
 }
 
@@ -363,4 +371,43 @@
 
 .FooterSocialLinks {
   margin-top: 50px; /* верхний внешний отступ элемента блока FooterSocialLinks 50 пикселей */
+}
+
+.HeaderMenu,
+.HeaderTitleMobile {
+  display: none; /* скрываем элементы блока HeaderMenu и HeaderTitleMobile в десктопной версии */
+}
+
+@media (max-width: 1270px) {
+  /* медиа-запрос для экранов шириной 1270 пикселей и меньше */
+  .Header {
+    height: 833px; /* высота элемента блока Header 833 пикселей */
+  }
+
+  .Navigation {
+    padding: 16px; /* внутренние отступы элемента блока Navigation 16 пикселей сверху и снизу, 16 пикселей по бокам */
+    justify-content: space-between; /* элементы блока Navigation выстраиваются в ряд, расстояние между элементами равно ширине экрана минус ширина элементов блока Navigation */
+    margin-bottom: 60px; /* нижний внешний отступ элемента блока Navigation 50 пикселей */
+  }
+
+  .HeaderLink,
+  .HeaderSocialLinks,
+  .HeaderTitle {
+    display: none; /* скрываем элементы блока HeaderLink, HeaderSocialLinks, HeaderTitle при ширине экрана меньше 1270 пикселей */
+  }
+
+  .HeaderMenu,
+  .HeaderTitleMobile {
+    display: block; /* показываем элементы блока HeaderMenu, HeaderTitleMobile при ширине экрана меньше 1270 пикселей */
+  }
+
+  .HeaderMenu {
+    display: flex;
+    align-items: center; /* элементы блока HeaderMenu выравниваются по вертикали по центру */
+  }
+
+  .HeaderTitleMobile,
+  .HeaderSubtitle {
+    padding: 0 16px; /* внутренние отступы элемента блока HeaderTitleMobile 0 пикселей сверху и снизу, 16 пикселей по бокам */
+  }
 }

@@ -30,11 +30,21 @@ export default function Home() {
           <div className={styles.HeaderSocialLinks}>
             <SocialLinks />
           </div>
+          <div className={styles.HeaderMenu}>
+            <Image src="/burger-menu.svg" width={28} height={16} alt="Menu" />
+          </div>
         </div>
         <h1 className={styles.HeaderTitle}>
           The best products <br />
           start with Figma
         </h1>
+        <h2 className={styles.HeaderTitleMobile}>
+          The best
+          <br />
+          products start
+          <br />
+          with Figma
+        </h2>
         <h4 className={styles.HeaderSubtitle}>
           Most calendars are designed for teams. Slate is designed
           <br />
