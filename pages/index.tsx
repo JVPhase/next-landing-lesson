@@ -60,6 +60,17 @@ export default function Home() {
           Most calendars are designed for teams. <br />
           Slate is designed for freelancers
         </h4>
+        <div className={styles.FeaturesVideoMobile}>
+          <Button className={styles.FeaturesVideoButtonMobile}>
+            <Image
+              src="/play.svg"
+              alt="play"
+              className={styles.FeaturesVideoButtonIcon}
+              width={13}
+              height={15}
+            />
+          </Button>
+        </div>
         <div className={styles.FeaturesList}>
           <div>
             <Image
@@ -157,6 +168,13 @@ export default function Home() {
             Lightning fast <br />
             prototyping
           </h2>
+          <Image
+            src="/newsletter.svg"
+            alt="newsletter"
+            width={371}
+            height={347}
+            className={styles.NewsletterImageMobile}
+          />
           <form className={styles.NewsletterForm}>
             <h3>Subscribe to our Newsletter</h3>
             <p>Available exclusivery on Figmaland</p>
