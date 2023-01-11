@@ -393,6 +393,25 @@ export default function Home() {
           <br /> Slate is designed for freelancers
         </h4>
         <div className={styles.ContactRow}>
+          <div className={styles.ContactInfoMobile}>
+            <SocialLinks isBlue />
+            <div className={styles.ContactInfoItem}>
+              <Image src="/pin-blue.svg" alt="pin" width={27} height={33} />
+              <h5>
+                6386 Spring St undefined Anchorage,
+                <br />
+                Georgia 12473 United States
+              </h5>
+            </div>
+            <div className={styles.ContactInfoItem}>
+              <Image src="/phone-blue.svg" alt="phone" width={21} height={33} />
+              <h5>(843) 555-0130</h5>
+            </div>
+            <div className={styles.ContactInfoItem}>
+              <Image src="/mail-blue.svg" alt="mail" width={27} height={22} />
+              <h5>willie.jennings@example.com</h5>
+            </div>
+          </div>
           <form className={styles.ContactForm}>
             <h3>Contact Us</h3>
             <Input

@@ -405,3 +405,191 @@
   display: block; /* элемент блока PartnersItem отображается как блочный элемент */
 }
 ```
+
+### Testimonials
+
+Блок `Partners` в мобильной версии отличается только стилями. Добавим стили для мобильной версии в медиа-запрос `@media (max-width: 1270px)`:
+
+```css
+.Testimonials h4 {
+  font-size: 20px; /* размер шрифта элемента блока Testimonials 20 пикселей */
+  line-height: 20px; /* высота строки элемента блока Testimonials 20 пикселей */
+}
+```
+
+### Pricing
+
+Блок `Pricing` в мобильной версии отличается только стилями. Добавим стили для мобильной версии в медиа-запрос `@media (max-width: 1270px)`:
+
+```css
+.PricingList {
+  grid-template-columns: auto; /* количество колонок в сетке элемента блока PricingList 1 */
+  row-gap: 50px; /* расстояние между строками элемента блока PricingList 50 пикселей */
+  max-width: 335px; /* максимальная ширина элемента блока PricingList 335 пикселей */
+}
+```
+
+### Contact
+
+В блоке `Contact` в мобильной версии компонент `SocialLinks` и блок `ContactInfo` находятся над формой обратной связи. Давайте добавим их в разметку блока `Contact`:
+
+```tsx
+<div className={styles.ContactRow}>
+  <div className={styles.ContactInfoMobile}>
+    <SocialLinks isBlue />
+    <div className={styles.ContactInfoItem}>
+      <Image src="/pin-blue.svg" alt="pin" width={27} height={33} />
+      <h5>
+        6386 Spring St undefined Anchorage,
+        <br />
+        Georgia 12473 United States
+      </h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/phone-blue.svg" alt="phone" width={21} height={33} />
+      <h5>(843) 555-0130</h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/mail-blue.svg" alt="mail" width={27} height={22} />
+      <h5>willie.jennings@example.com</h5>
+    </div>
+  </div>
+  <form className={styles.ContactForm}>
+    <h3>Contact Us</h3>
+    <Input
+      className={styles.ContactFormInput}
+      placeholder="Your Name"
+    />
+    <Input
+      className={styles.ContactFormInput}
+      placeholder="Your Email"
+    />
+    <textarea
+      className={styles.ContactFormTextarea}
+      placeholder="Your Message"
+    />
+    <Button className={styles.ContactFormButton}>Send</Button>
+  </form>
+  <div className={styles.ContactInfo}>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/pin-blue.svg" alt="pin" width={27} height={33} />
+      <h5>
+        6386 Spring St undefined Anchorage,
+        <br />
+        Georgia 12473 United States
+      </h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/phone-blue.svg" alt="phone" width={21} height={33} />
+      <h5>(843) 555-0130</h5>
+    </div>
+    <div className={styles.ContactInfoItem}>
+      <Image src="/mail-blue.svg" alt="mail" width={27} height={22} />
+      <h5>willie.jennings@example.com</h5>
+    </div>
+    <div className={styles.ContactInfoMap}>
+      <Image src="/map.jpg" alt="map" width={516} height={323} />
+    </div>
+    <SocialLinks isBlue />
+  </div>
+</div>
+```
+
+Теперь скроем элемент `NewsletterImageMobile` в десктопной версии:
+
+было
+
+```css
+.HeaderMenu,
+.HeaderTitleMobile,
+.FeaturesVideoMobile,
+.NewsletterImageMobile,
+ {
+  display: none; /* скрываем элементы блока HeaderMenu, блока HeaderTitleMobile, блока FeaturesVideoMobile, блока NewsletterImageMobile */
+}
+```
+
+стало
+
+```css
+.HeaderMenu,
+.HeaderTitleMobile,
+.FeaturesVideoMobile,
+.NewsletterImageMobile,
+.ContactInfoMobile {
+  display: none; /* скрываем элементы блока HeaderMenu, элементы блока HeaderTitleMobile, элементы блока FeaturesVideoMobile, элементы блока NewsletterImageMobile, элементы блока ContactInfoMobile */
+}
+```
+
+Теперь добавим стили для мобильной версии в медиа-запрос `@media (max-width: 1270px)`:
+
+```css
+.ContactRow {
+  display: block; /* элемент блока ContactRow отображается как блочный элемент */
+}
+
+.ContactInfo {
+  display: none; /* скрываем элемент при ширине экрана меньше 1270 пикселей */
+}
+
+.ContactInfoMobile {
+  display: block; /* элемент блока ContactInfoMobile отображается как блочный элемент */
+  max-width: 378px; /* максимальная ширина элемента блока ContactInfoMobile 378 пикселей */
+  margin: 0 auto 100px; /* отступы по бокам автоматические, нижний внешний отступ элемента блока ContactInfoMobile 100 пикселей */
+}
+
+.ContactInfoMobile > div:first-child {
+  margin-bottom: 100px; /* нижний внешний отступ элемента блока ContactInfoMobile 150 пикселей */
+}
+
+.ContactInfoItem {
+  display: flex; /* элемент блока ContactInfoItem отображается как блочный элемент */
+  margin-bottom: 20px; /* нижний внешний отступ элемента блока ContactInfoItem 20 пикселей */
+}
+
+.ContactInfoItem img {
+  width: 60px; /* ширина изображения элемента блока ContactInfoItem 60 пикселей */
+}
+
+.ContactInfoItem h5 {
+  height: unset; /* высота элемента блока ContactInfoItem не задана */
+}
+
+.ContactForm {
+  margin: 0 auto; /* отступы по бокам автоматические */
+  width: 100%; /* ширина элемента блока ContactForm 100% */
+  max-width: 378px; /* максимальная ширина элемента блока ContactForm 378 пикселей */
+}
+
+.ContactFormTextarea {
+  width: 100%; /* ширина элемента блока ContactFormTextarea 100% */
+}
+```
+
+### Footer
+
+Добавим стили для мобильной версии в медиа-запрос `@media (max-width: 1270px)`:
+
+```css
+.Footer {
+  padding: 107px 0; /* внутренние отступы элемента блока Footer 107 пикселей сверху и снизу, 0 пикселей по бокам */
+}
+
+.FooterRow {
+  width: 300px; /* ширина элемента блока FooterRow 300 пикселей */
+  text-align: center; /* выравнивание текста по центру */
+  display: block; /* элемент блока FooterRow отображается как блочный элемент */
+}
+
+.FooterItem {
+  margin: 0 auto 100px !important; /* отступы по бокам автоматические, нижний внешний отступ элемента блока FooterItem 100 пикселей */
+}
+
+.FooterContact {
+  text-align: left; /* выравнивание текста по левому краю */
+}
+```
+
+Вы просто класс! Теперь лендинг адаптирован под мобильные устройства.
+
+На этом пока все. Однако вполне возможно урок будет дополнен в будущем.
